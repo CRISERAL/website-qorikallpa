@@ -17,8 +17,9 @@ export const LanguageSelector = () => {
   return (
     <>
       <select onChange={(e) => changeLanguage(e.target.value)} value={currentLocale}>
-        <option value="en">EN</option>
         <option value="es">ES</option>
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
       </select>
     </>
   );

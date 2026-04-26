@@ -1,0 +1,27 @@
+{
+  "home": {
+    "hero": {
+      "title": "Découvrez Votre Séjour Idéal à Cusco",
+      "description": "Chambres confortables, emplacement idéal et les meilleurs prix pour votre voyage.",
+      "primaryButtonLabel": "Réserver maintenant",
+      "secondaryButtonLabel": "Voir les chambres"
+    },
+    "about": {
+      "title": "À propos de nous",
+      "subtitle": "Un endroit comme chez vous",
+      "description": "Nous offrons une expérience chaleureuse et accueillante pour les voyageurs à la recherche de confort, de qualité et d’un excellent service au cœur de Cusco."
+    },
+    "rooms": {
+      "title": "Nos chambres",
+      "subtitle": "Confort et qualité pour chaque invité",
+      "description": "Choisissez parmi une variété de chambres conçues pour répondre à vos besoins, que vous voyagiez seul, en couple ou en famille.",
+      "primaryButtonLabel": "Voir les chambres"
+    },
+    "services": {
+      "title": "Nos services",
+      "subtitle": "Tout ce dont vous avez besoin",
+      "description": "Profitez du Wi-Fi gratuit, du petit-déjeuner, du transfert aéroport et d’une assistance personnalisée pour rendre votre séjour inoubliable.",
+      "primaryButtonLabel": "Voir les services"
+    }
+  }
+}

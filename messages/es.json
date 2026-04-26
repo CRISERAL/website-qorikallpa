@@ -1,12 +1,27 @@
 {
-  "HomePage": {
-    "title": "Bienvenido a Next.js",
-    "description": "El Framework de React para la Web",
-    "cta": "Empezar"
-  },
-  "AboutPage": {
-    "title": "Acerca de",
-    "description": "Pagina de Acerca de",
-    "team": "Nuestro Equipo"
+  "home": {
+    "hero": {
+      "title": "Descubre tu estadía perfecta en Cusco",
+      "description": "Disfruta de habitaciones cómodas, excelente ubicación y precios accesibles para una experiencia inolvidable.",
+      "primaryButtonLabel": "Reservar ahora",
+      "secondaryButtonLabel": "Ver habitaciones"
+    },
+    "about": {
+      "title": "Sobre nosotros",
+      "subtitle": "Un lugar donde te sentirás como en casa",
+      "description": "Brindamos una experiencia cálida y acogedora para viajeros que buscan comodidad, calidad y un servicio excepcional en el corazón de Cusco."
+    },
+    "rooms": {
+      "title": "Nuestras habitaciones",
+      "subtitle": "Comodidad y calidad para cada huésped",
+      "description": "Contamos con diferentes tipos de habitaciones diseñadas para adaptarse a tus necesidades, ya sea que viajes solo, en pareja o en familia.",
+      "primaryButtonLabel": "Explorar habitaciones"
+    },
+    "services": {
+      "title": "Nuestros servicios",
+      "subtitle": "Todo lo que necesitas para tu estadía",
+      "description": "Disfruta de Wi-Fi gratuito, desayuno incluido, traslado al aeropuerto y atención personalizada para hacer de tu visita una experiencia única.",
+      "primaryButtonLabel": "Ver servicios"
+    }
   }
 }

@@ -1,12 +1,27 @@
 {
-  "HomePage": {
-    "title": "Welcome to Next.js",
-    "description": "The React Framework for the Web",
-    "cta": "Get Started"
-  },
-  "AboutPage": {
-    "title": "About",
-    "description": "About page",
-    "team": "Our Team"
+  "home": {
+    "hero": {
+      "title": "Discover Your Perfect Stay in Cusco",
+      "description": "Comfortable rooms, great location, and the best prices for your trip.",
+      "primaryButtonLabel": "Book Now",
+      "secondaryButtonLabel": "View Rooms"
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "A place that feels like home",
+      "description": "We offer a warm and welcoming experience for travelers looking for comfort, quality, and excellent service in the heart of Cusco."
+    },
+    "rooms": {
+      "title": "Our Rooms",
+      "subtitle": "Comfort and quality for every guest",
+      "description": "Choose from a variety of rooms designed to suit your needs, whether you are traveling alone, as a couple, or with family.",
+      "primaryButtonLabel": "Explore Rooms"
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Everything you need for a great stay",
+      "description": "Enjoy free Wi-Fi, breakfast, airport transfer, and personalized assistance to make your stay unforgettable.",
+      "primaryButtonLabel": "View Services"
+    }
   }
 }
