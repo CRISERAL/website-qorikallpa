@@ -79,7 +79,11 @@ export default function ContactForm() {
           onClick={() => setStatus('idle')}
           className="mt-2 text-xs font-semibold text-accent uppercase tracking-widest hover:underline"
         >
-          ← {t('submit').replace('Send', 'New').replace('Enviar', 'Nuevo').replace('Envoyer', 'Nouveau')}
+          ←{' '}
+          {t('submit')
+            .replace('Send', 'New')
+            .replace('Enviar', 'Nuevo')
+            .replace('Envoyer', 'Nouveau')}
         </button>
       </div>
     );
@@ -177,9 +181,7 @@ export default function ContactForm() {
         )}
       </div>
 
-      {status === 'error' && (
-        <p className="text-sm text-red-500">{t('errorMessage')}</p>
-      )}
+      {status === 'error' && <p className="text-sm text-red-500">{t('errorMessage')}</p>}
 
       <div>
         <button
