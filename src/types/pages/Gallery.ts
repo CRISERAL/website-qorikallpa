@@ -1,4 +1,4 @@
-import { Img, SharedSectionAbout, SharedSectionHero } from '@/src/types/Shared';
+import { Img, SharedSectionHero } from '@/src/types/Shared';
 import { StrapiEntity } from '@/src/types/Strapi';
 
 export interface GalleryListEntity {

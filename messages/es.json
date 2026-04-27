@@ -61,6 +61,43 @@
     "hero": {
       "title": "Contáctanos",
       "description": "Estamos aquí para ayudarte a planificar tu estadía perfecta en Cusco. Escríbenos y te responderemos pronto."
+    },
+    "info": {
+      "subtitle": "Ponte en contacto",
+      "title": "Nos encantaría saber de ti",
+      "description": "Ya sea que tengas una pregunta sobre disponibilidad, servicios o simplemente quieras saludarnos — nuestro equipo está listo para responderte.",
+      "address": {
+        "label": "Dirección"
+      },
+      "phone": {
+        "label": "Teléfono / WhatsApp"
+      },
+      "email": {
+        "label": "Correo electrónico"
+      },
+      "hours": {
+        "label": "Horario de recepción"
+      },
+      "mapTitle": "Ubicación del Hostal Koriqallpa",
+      "form": {
+        "subtitle": "Envíanos un mensaje",
+        "title": "Haz una reserva o consulta",
+        "name": "Nombre completo",
+        "namePlaceholder": "Tu nombre",
+        "email": "Correo electrónico",
+        "emailPlaceholder": "tu@correo.com",
+        "phone": "Teléfono (opcional)",
+        "phonePlaceholder": "+51 000 000 000",
+        "message": "Mensaje",
+        "messagePlaceholder": "Cuéntanos sobre tu estadía: fechas, número de huéspedes, preguntas...",
+        "submit": "Enviar mensaje",
+        "sending": "Enviando...",
+        "successTitle": "¡Mensaje enviado!",
+        "successMessage": "Gracias por contactarnos. Te responderemos en menos de 24 horas.",
+        "errorMessage": "Algo salió mal. Por favor intenta de nuevo o contáctanos directamente.",
+        "required": "Este campo es obligatorio",
+        "invalidEmail": "Por favor ingresa un correo electrónico válido"
+      }
     }
   }
 }
