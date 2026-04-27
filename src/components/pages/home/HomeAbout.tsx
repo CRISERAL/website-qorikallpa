@@ -1,5 +1,6 @@
 import Container from '@/src/components/templates/Container';
 import { Link } from '@/src/i18n/navigation';
+import { cn } from '@/src/lib/cn';
 import { routes } from '@/src/lib/routes';
 import { useTranslations } from 'next-intl';
 import { FaAngleRight } from 'react-icons/fa';
@@ -47,13 +48,12 @@ export default function HomeAbout() {
             <div className="grid grid-cols-2 gap-3 lg:block lg:h-130">
               {images.map((src, index) => (
                 <div
-                  key={src}
-                  className={`
-                    relative lg:absolute
-                    ${index === 0 ? 'col-span-2' : ''}
-                    ${imageStyles[index]}
-                    transition-all duration-300 hover:rotate-0 hover:scale-105 hover:z-50
-                  `}
+                  key={index}
+                  className={cn(
+                    'relative lg:absolute transition-all duration-300 hover:rotate-0 hover:scale-105 hover:z-50',
+                    index === 0 ? 'col-span-2' : '',
+                    imageStyles[index]
+                  )}
                 >
                   <div className="bg-card p-2 pb-6 shadow-xl">
                     <div className="aspect-4/3 overflow-hidden">
