@@ -1,26 +1,38 @@
 {
   "home": {
     "hero": {
-      "title": "Découvrez Votre Séjour Idéal à Cusco",
-      "description": "Chambres confortables, emplacement idéal et les meilleurs prix pour votre voyage.",
+      "title": "Repos avec énergie andine à San Blas, Cusco",
+      "description": "Votre maison au cœur du quartier artisanal le plus authentique de Cusco. Confort moderne, esprit andin et service personnalisé.",
       "primaryButtonLabel": "Réserver maintenant",
       "secondaryButtonLabel": "Voir les chambres"
     },
     "about": {
-      "title": "À propos de nous",
-      "subtitle": "Un endroit comme chez vous",
-      "description": "Nous offrons une expérience chaleureuse et accueillante pour les voyageurs à la recherche de confort, de qualité et d’un excellent service au cœur de Cusco."
+      "title": "Hostal Koriqallpa",
+      "subtitle": "Repos avec énergie andine",
+      "description": "Né de l'amour pour Cusco et ses habitants. Inspirés par les traditions de la Vallée Sacrée et l'art ancestral, nous avons créé un espace où chaque détail compte. Votre bien-être est notre priorité dans le pittoresque quartier de San Blas.",
+      "feature1Label": "San Blas, Cusco",
+      "feature1Value": "Emplacement",
+      "feature2Label": "Attention 24h",
+      "feature2Value": "Service",
+      "feature3Label": "Petit-déjeuner andin",
+      "feature3Value": "Inclus",
+      "quote": "San Blas est connu comme le quartier des artisans et de la créativité — l'endroit idéal pour que votre aventure cusquénienne commence avec une énergie positive et authentique.",
+      "value1": "Hospitalité authentique et service personnalisé",
+      "value2": "Durabilité et respect de la culture andine",
+      "value3": "Excellence dans chaque détail de votre séjour",
+      "ctaLabel": "Nous contacter",
+      "secondaryCtaLabel": "Voir les chambres"
     },
     "rooms": {
-      "title": "Nos chambres",
-      "subtitle": "Confort et qualité pour chaque invité",
-      "description": "Choisissez parmi une variété de chambres conçues pour répondre à vos besoins, que vous voyagiez seul, en couple ou en famille.",
+      "title": "Espaces de Rêve",
+      "subtitle": "Nos chambres",
+      "description": "Double Andine, Triple San Blas ou Suite Vue Cusco — chaque espace conçu pour votre confort.",
       "primaryButtonLabel": "Voir les chambres"
     },
     "services": {
       "title": "Nos services",
       "subtitle": "Tout ce dont vous avez besoin",
-      "description": "Profitez du Wi-Fi gratuit, du petit-déjeuner, du transfert aéroport et d’une assistance personnalisée pour rendre votre séjour inoubliable.",
+      "description": "Petit-déjeuner andin traditionnel, conseils touristiques, visites guidées, art cusquénien et assistance personnalisée 24h/24.",
       "primaryButtonLabel": "Voir les services"
     }
   }

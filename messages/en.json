@@ -1,26 +1,38 @@
 {
   "home": {
     "hero": {
-      "title": "Discover Your Perfect Stay in Cusco",
-      "description": "Comfortable rooms, great location, and the best prices for your trip.",
+      "title": "Rest with Andean Energy in San Blas, Cusco",
+      "description": "Your home in the heart of Cusco's most authentic artisan neighborhood. Modern comfort, Andean spirit, and personalized service.",
       "primaryButtonLabel": "Book Now",
       "secondaryButtonLabel": "View Rooms"
     },
     "about": {
-      "title": "About Us",
-      "subtitle": "A place that feels like home",
-      "description": "We offer a warm and welcoming experience for travelers looking for comfort, quality, and excellent service in the heart of Cusco."
+      "title": "Hostal Koriqallpa",
+      "subtitle": "Rest with Andean energy",
+      "description": "Born from a love of Cusco and its people. Inspired by the traditions of the Sacred Valley and ancestral art, we created a space where every detail matters. Your well-being is our priority in the picturesque San Blas neighborhood.",
+      "feature1Label": "San Blas, Cusco",
+      "feature1Value": "Location",
+      "feature2Label": "24h Attention",
+      "feature2Value": "Service",
+      "feature3Label": "Andean breakfast",
+      "feature3Value": "Included",
+      "quote": "San Blas is known as the neighborhood of artisans and creativity — the perfect place for your Cusco adventure to begin with positive, authentic energy.",
+      "value1": "Authentic hospitality and personalized service",
+      "value2": "Sustainability and respect for Andean culture",
+      "value3": "Excellence in every detail of your stay",
+      "ctaLabel": "Contact Us",
+      "secondaryCtaLabel": "View Rooms"
     },
     "rooms": {
-      "title": "Our Rooms",
-      "subtitle": "Comfort and quality for every guest",
-      "description": "Choose from a variety of rooms designed to suit your needs, whether you are traveling alone, as a couple, or with family.",
+      "title": "Dream Spaces",
+      "subtitle": "Our Rooms",
+      "description": "Andean Double, San Blas Triple, or Cusco View Suite — each space designed for your comfort.",
       "primaryButtonLabel": "Explore Rooms"
     },
     "services": {
       "title": "Our Services",
       "subtitle": "Everything you need for a great stay",
-      "description": "Enjoy free Wi-Fi, breakfast, airport transfer, and personalized assistance to make your stay unforgettable.",
+      "description": "Traditional Andean breakfast, tourist advice, guided tours, Cusco art experiences, and 24-hour personalized assistance.",
       "primaryButtonLabel": "View Services"
     }
   }

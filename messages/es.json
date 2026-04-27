@@ -1,26 +1,27 @@
 {
   "home": {
     "hero": {
-      "title": "Descubre tu estadía perfecta en Cusco",
-      "description": "Disfruta de habitaciones cómodas, excelente ubicación y precios accesibles para una experiencia inolvidable.",
+      "title": "Descanso con energía andina en San Blas, Cusco",
+      "description": "Tu hogar en el corazón del barrio artesano más auténtico de Cusco. Confort moderno, espíritu andino y servicio personalizado.",
       "primaryButtonLabel": "Reservar ahora",
       "secondaryButtonLabel": "Ver habitaciones"
     },
     "about": {
-      "title": "Sobre nosotros",
-      "subtitle": "Un lugar donde te sentirás como en casa",
-      "description": "Brindamos una experiencia cálida y acogedora para viajeros que buscan comodidad, calidad y un servicio excepcional en el corazón de Cusco."
+      "title": "Hostal Koriqallpa",
+      "subtitle": "Descanso con energía andina",
+      "description": "Hostal Koriqallpa nace del amor por Cusco y su gente. Inspirados en las tradiciones del valle sagrado y el arte ancestral, creamos un espacio donde cada detalle cuenta. Desde nuestras habitaciones confortables hasta nuestro equipo atento y amable, tu bienestar es nuestra prioridad.\n\n San Blas es conocido como el barrio de los artesanos y la creatividad, un lugar perfecto para que tu aventura cusqueña comience con energía positiva y auténtica.",
+      "primaryButtonLabel": "Contáctanos"
     },
     "rooms": {
       "title": "Espacios de Ensueño",
       "subtitle": "Nuestras habitaciones",
-      "description": "Opciones de habitaciones para cada tipo de viajero.",
+      "description": "Doble Andina, Triple San Blas o Suite Vista Cusco — cada espacio diseñado para tu comodidad.",
       "primaryButtonLabel": "Explorar habitaciones"
     },
     "services": {
       "title": "Nuestros servicios",
       "subtitle": "Todo lo que necesitas para tu estadía",
-      "description": "Disfruta de Wi-Fi gratuito, desayuno incluido, traslado al aeropuerto y atención personalizada para hacer de tu visita una experiencia única.",
+      "description": "Desayuno típico andino, asesoría turística, tours guiados, arte cusqueño y atención personalizada las 24 horas.",
       "primaryButtonLabel": "Ver servicios"
     }
   }
