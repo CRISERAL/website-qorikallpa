@@ -1,4 +1,13 @@
 {
+  "header": {
+    "nav": {
+      "home": "INICIO",
+      "rooms": "HABITACIONES",
+      "services": "SERVICIOS",
+      "gallery": "GALERÍA",
+      "contact": "CONTACTO"
+    }
+  },
   "footer": {
     "description": "Hospedaje boutique en el corazón del Cusco. Donde la elegancia se encuentra con la tradición andina.",
     "quote": "El espíritu andino hecho descanso",

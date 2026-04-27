@@ -1,4 +1,13 @@
 {
+  "header": {
+    "nav": {
+      "home": "ACCUEIL",
+      "rooms": "CHAMBRES",
+      "services": "SERVICES",
+      "gallery": "GALERIE",
+      "contact": "CONTACT"
+    }
+  },
   "footer": {
     "description": "Hébergement boutique au cœur de Cusco. Où l'élégance rencontre la tradition andine.",
     "quote": "L'esprit andin fait repos",

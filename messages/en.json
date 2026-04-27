@@ -1,4 +1,13 @@
 {
+  "header": {
+    "nav": {
+      "home": "HOME",
+      "rooms": "ROOMS",
+      "services": "SERVICES",
+      "gallery": "GALLERY",
+      "contact": "CONTACT"
+    }
+  },
   "footer": {
     "description": "Boutique accommodation in the heart of Cusco. Where elegance meets Andean tradition.",
     "quote": "The Andean spirit made rest",
