@@ -23,9 +23,7 @@ export default function Header() {
 
   return (
     <header className="relative z-50 bg-background shadow-md">
-      {/* Top Section with Logo and Language Selector */}
       <div className="relative overflow-hidden">
-        {/* Background Pattern */}
         <div className="absolute inset-0 z-0">
           <img
             src="/textura-de-seda.webp"
@@ -35,11 +33,8 @@ export default function Header() {
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
-
-        {/* Header Content */}
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <div className="flex items-center justify-between py-3">
-            {/* Left Side - Empty space for symmetry on desktop, Hamburger on mobile */}
             <div className="w-10 lg:w-24">
               <button
                 onClick={toggleMenu}
@@ -49,23 +44,16 @@ export default function Header() {
                 {isMenuOpen ? <FaTimes className="w-5 h-5" /> : <FaBars className="w-5 h-5" />}
               </button>
             </div>
-
-            {/* Logo - Center */}
-            <Link href={routes.home} className="flex-shrink-0">
+            <Link href={routes.home} className="shrink-0">
               <img src="/logo.webp" alt="Hostal Koriqallpa" className="h-14 w-auto" />
             </Link>
-
-            {/* Right Side - Language Selector */}
             <div className="flex items-center justify-end w-10 lg:w-24">
               <LanguageSelector />
             </div>
           </div>
         </div>
       </div>
-
-      {/* Navigation Bar - Desktop */}
       <nav className="hidden lg:block relative overflow-hidden">
-        {/* Background Pattern */}
         <div className="absolute inset-0 z-0">
           <img
             src="/textura-de-seda.webp"
@@ -75,7 +63,6 @@ export default function Header() {
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
-
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <ul className="flex items-center justify-center gap-10 py-4">
             {navLinks.map((link) => (
@@ -92,8 +79,6 @@ export default function Header() {
           </ul>
         </div>
       </nav>
-
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden border-t border-border bg-muted">
           <nav className="mx-auto max-w-7xl px-6 py-4">

@@ -2,7 +2,6 @@ import { getContentPage } from '@/src/api/strapi/getContentPage';
 import ServicesList from '@/src/components/pages/services/ServicesList';
 import SharedHero from '@/src/components/pages/SharedHero';
 import { ServiceBlocks, ServiceContent } from '@/src/types/pages/Services';
-import { useTranslations } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 type Props = {
@@ -11,7 +10,7 @@ type Props = {
 
 type Translator = Awaited<ReturnType<typeof getTranslations>>;
 
-function renderComponent(component: ServiceBlocks, index: number, t: Translator) {
+function renderComponent(component: ServiceBlocks, index: number, t: Translator, locale: string) {
   const key = `${component.id}-${index}`;
 
   switch (component.__component) {
@@ -26,7 +25,7 @@ function renderComponent(component: ServiceBlocks, index: number, t: Translator)
       );
 
     case 'service.service-list':
-      return <ServicesList key={key} />;
+      return <ServicesList key={key} locale={locale} />;
 
     default:
       return null;
@@ -44,5 +43,5 @@ export default async function Gallery({ params }: Props) {
 
   const t = await getTranslations('services.hero');
 
-  return <>{content.map((component, index) => renderComponent(component, index, t))}</>;
+  return <>{content.map((component, index) => renderComponent(component, index, t, locale))}</>;
 }
