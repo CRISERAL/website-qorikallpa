@@ -3,7 +3,12 @@ import HomeAbout from '@/src/components/pages/home/HomeAbout';
 import HomeFeaturedRooms from '@/src/components/pages/home/HomeFeaturedRooms';
 import HomeFeaturedServices from '@/src/components/pages/home/HomeFeaturedServices';
 import HomeHero from '@/src/components/pages/home/HomeHero';
-import { HomeBlocks, HomeContent, HomeRoomsEntity } from '@/src/types/pages/Home';
+import {
+  HomeBlocks,
+  HomeContent,
+  HomeRoomsEntity,
+  HomeServicesEntity,
+} from '@/src/types/pages/Home';
 import { setRequestLocale } from 'next-intl/server';
 
 type Props = {
@@ -20,7 +25,7 @@ function renderComponent(component: HomeBlocks, index: number) {
     case 'home.home-rooms':
       return <HomeFeaturedRooms key={key} data={component as HomeRoomsEntity} />;
     case 'home.home-services':
-      return <HomeFeaturedServices key={key} />;
+      return <HomeFeaturedServices key={key} data={component as HomeServicesEntity} />;
     default:
       return null;
   }

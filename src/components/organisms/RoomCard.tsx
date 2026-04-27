@@ -16,7 +16,7 @@ export default function RoomCard({ data, className }: Props) {
   return (
     <div
       className={cn(
-        'flex-1 min-w-0 transition-all duration-300 hover:scale-105 hover:rotate-0 hover:z-10 relative',
+        'flex-1 min-w-0 transition-all duration-300 hover:scale-105 hover:rotate-0 hover:z-10 relative shadow',
         className
       )}
     >
