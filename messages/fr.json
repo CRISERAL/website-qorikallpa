@@ -49,5 +49,29 @@
       "description": "Petit-déjeuner andin traditionnel, conseils touristiques, visites guidées, art cusquénien et assistance personnalisée 24h/24.",
       "primaryButtonLabel": "Voir les services"
     }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Notre Galerie",
+      "description": "Découvrez chaque recoin de notre auberge à travers des images qui capturent l'essence, le confort et la beauté de notre expérience au cœur de Cusco."
+    }
+  },
+  "rooms": {
+    "hero": {
+      "title": "Nos Chambres",
+      "description": "Des espaces conçus avec amour et attention aux détails, où le confort moderne rencontre la chaleur andine."
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Nos Services",
+      "description": "Tout ce dont vous avez besoin pour un séjour inoubliable au cœur de Cusco."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contactez-nous",
+      "description": "Nous sommes là pour vous aider à planifier votre séjour parfait à Cusco. Écrivez-nous et nous vous répondrons bientôt."
+    }
   }
 }

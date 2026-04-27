@@ -49,5 +49,29 @@
       "description": "Traditional Andean breakfast, tourist advice, guided tours, Cusco art experiences, and 24-hour personalized assistance.",
       "primaryButtonLabel": "View Services"
     }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Our Gallery",
+      "description": "Discover every corner of our hostel through images that capture the essence, comfort and beauty of our experience in the heart of Cusco."
+    }
+  },
+  "rooms": {
+    "hero": {
+      "title": "Our Rooms",
+      "description": "Spaces designed with love and attention to detail, where modern comfort meets Andean warmth."
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Our Services",
+      "description": "Everything you need for an unforgettable stay in the heart of Cusco."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "description": "We are here to help you plan your perfect stay in Cusco. Write to us and we will respond soon."
+    }
   }
 }

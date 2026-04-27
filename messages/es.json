@@ -38,5 +38,29 @@
       "description": "Desayuno típico andino, asesoría turística, tours guiados, arte cusqueño y atención personalizada las 24 horas.",
       "primaryButtonLabel": "Ver servicios"
     }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Nuestra Galería",
+      "description": "Descubre cada rincón de nuestro hostal a través de imágenes que capturan la esencia, comodidad y belleza de nuestra experiencia en el corazón de Cusco."
+    }
+  },
+  "rooms": {
+    "hero": {
+      "title": "Nuestras Habitaciones",
+      "description": "Espacios diseñados con amor y atención al detalle, donde el confort moderno se encuentra con la calidez andina."
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Nuestros Servicios",
+      "description": "Todo lo que necesitas para una estadía inolvidable en el corazón de Cusco."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contáctanos",
+      "description": "Estamos aquí para ayudarte a planificar tu estadía perfecta en Cusco. Escríbenos y te responderemos pronto."
+    }
   }
 }
