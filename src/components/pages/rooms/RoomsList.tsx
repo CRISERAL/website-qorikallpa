@@ -64,8 +64,8 @@ export default function RoomsList() {
       const apiUrl = `/api/habitaciones${query ? `?${query}` : ''}`;
 
       const res = await fetch(apiUrl);
+      console.log('API response status:', res.status);
       const data = await res.json();
-
       console.log('API response:', data);
 
       if (data.success) {
