@@ -1,19 +1,21 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import '@/src/app/[locale]/globals.css';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { Playfair_Display, Lato } from 'next/font/google';
 import { routing } from '@/src/i18n/routing';
 import { notFound } from 'next/navigation';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import '@/src/app/[locale]/globals.css';
+import type { Metadata } from 'next';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const playfair = Playfair_Display({
+  variable: '--font-playfair',
   subsets: ['latin'],
+  weight: ['400', '700', '900'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const lato = Lato({
+  variable: '--font-lato',
   subsets: ['latin'],
+  weight: ['300', '400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -39,8 +41,10 @@ export default async function RootLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang={locale} className="bg-background text-text-primary">
+      <body
+        className={`${playfair.variable} ${lato.variable} antialiased font-lato bg-background text-text-primary`}
+      >
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
     </html>

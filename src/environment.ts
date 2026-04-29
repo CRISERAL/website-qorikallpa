@@ -8,6 +8,9 @@ const environment = {
     apiEndpoint: port ? `${protocol}://${host}:${port}` : `${protocol}://${host}`,
   },
   apiBackend,
+  backend: {
+    apiEndpoint: process.env.API_BACKEND,
+  },
 };
 
 export default environment;

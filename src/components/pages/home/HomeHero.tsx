@@ -1,51 +1,71 @@
 import Container from '@/src/components/templates/Container';
 import { Link } from '@/src/i18n/navigation';
 import { routes } from '@/src/lib/routes';
-import { useTranslations } from 'next-intl';
 import { FaAngleRight } from 'react-icons/fa';
 
 export default function HomeHero() {
-  const t = useTranslations('home.hero');
-
   return (
-    <section className="relative h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-cream-100 py-16 lg:min-h-[85vh] lg:py-20">
+      <div className="absolute inset-0 lg:hidden">
         <img
-          src="/bg-about-2.jpg"
+          src="/bg-about-3.jpg"
           alt=""
           aria-hidden="true"
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-cover opacity-60 mask-[url('/mask.png')] mask-[180%_auto] mask-center mask-no-repeat [-webkit-mask-image:url('/mask.png')] [-webkit-mask-size:180%_auto] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center]"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
       </div>
+
+      <div className="absolute inset-0 bg-cream-100/50 lg:hidden" />
+
       <Container className="relative z-10 w-full">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-            {t('title')}
-          </h1>
-          <p className="text-base md:text-lg text-white/90 leading-relaxed mb-8 max-w-xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            {t('description')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href={routes.contact}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-accent text-white text-xs font-semibold uppercase tracking-widest hover:bg-accent-light transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              {t('primaryButtonLabel')}
-              <FaAngleRight className="w-3 h-3" />
-            </Link>
-            <Link
-              href={routes.rooms}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white text-xs font-semibold uppercase tracking-widest hover:bg-white/20 transition-all duration-300"
-            >
-              {t('secondaryButtonLabel')}
-              <FaAngleRight className="w-3 h-3" />
-            </Link>
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1.3fr]">
+          <div className="text-center lg:text-left">
+            <h1 className="font-playfair text-4xl font-black leading-tight text-brown-900 sm:text-5xl md:text-6xl xl:text-7xl">
+              Tu aventura
+              <br />
+              comienza en
+              <br />
+              <span className="text-accent-500">San Blas</span>
+            </h1>
+
+            <div className="my-4 flex justify-center lg:justify-start" aria-hidden="true">
+              <svg viewBox="0 0 200 12" fill="none" width={200} height={12}>
+                <path
+                  d="M0 6 Q10 0 20 6 Q30 12 40 6 Q50 0 60 6 Q70 12 80 6 Q90 0 100 6 Q110 12 120 6 Q130 0 140 6 Q150 12 160 6 Q170 0 180 6 Q190 12 200 6"
+                  stroke="var(--color-gold-500)"
+                  strokeWidth="2"
+                  fill="none"
+                />
+              </svg>
+            </div>
+
+            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-brown-700 md:text-lg lg:mx-0">
+              San Blas es conocido como el barrio de los artesanos y la creatividad, un lugar
+              perfecto para que tu aventura cusqueña comience con energía positiva y auténtica.
+            </p>
+
+            <div className="mt-8">
+              <Link
+                href={routes.contact}
+                aria-label="Ir a la página de contacto"
+                className="inline-flex w-full items-center justify-center gap-2 bg-accent-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-accent-600 sm:w-auto"
+              >
+                Contáctanos <FaAngleRight aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="hidden justify-end lg:flex">
+            <div className="relative h-[560px] w-full xl:h-[680px] 2xl:h-[720px]">
+              <img
+                src="/bg-about-3.jpg"
+                alt="Vista de San Blas en Cusco"
+                className="h-full w-full object-cover mask-[url('/mask.png')] mask-size-[100%_100%] mask-center mask-no-repeat [-webkit-mask-image:url('/mask.png')] [-webkit-mask-size:100%_100%] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center]"
+              />
+            </div>
           </div>
         </div>
       </Container>
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent z-10" />
     </section>
   );
 }
