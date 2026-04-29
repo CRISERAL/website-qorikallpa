@@ -8,6 +8,7 @@
   --cream-300: #e5d2b8;
 
   /* 🎯 Marrones */
+  --brown-300: #cdb89f;
   --brown-700: #5f4634;
   --brown-800: #3e2a1f;
   --brown-900: #2c1a0e;
@@ -31,6 +32,7 @@
   --color-cream-200: var(--cream-200);
   --color-cream-300: var(--cream-300);
 
+  --color-brown-300: var(--brown-300);
   --color-brown-700: var(--brown-700);
   --color-brown-800: var(--brown-800);
   --color-brown-900: var(--brown-900);

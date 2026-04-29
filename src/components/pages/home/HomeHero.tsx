@@ -6,8 +6,6 @@ import { FaAngleRight } from 'react-icons/fa';
 export default function HomeHero() {
   return (
     <section className="relative flex min-h-screen overflow-hidden bg-cream-100">
-      
-      {/* 📱 IMAGEN BACKGROUND SOLO MOBILE */}
       <div className="absolute inset-0 z-0 lg:hidden">
         <img
           src="/bg-about-3.jpg"
@@ -26,11 +24,7 @@ export default function HomeHero() {
           "
         />
       </div>
-
-      {/* overlay para mejorar lectura */}
       <div className="absolute inset-0 bg-cream-100/70 z-0 lg:hidden" />
-
-      {/* 🟤 TEXTO */}
       <div className="relative z-10 flex w-full items-center lg:w-1/2">
         <Container>
           <div className="text-center lg:text-left">
@@ -41,7 +35,6 @@ export default function HomeHero() {
               <br />
               <span className="text-accent-500">San Blas</span>
             </h1>
-
             <div className="my-4 flex justify-center lg:justify-start" aria-hidden="true">
               <svg viewBox="0 0 200 12" fill="none" width={200} height={12}>
                 <path
@@ -52,7 +45,6 @@ export default function HomeHero() {
                 />
               </svg>
             </div>
-
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-brown-700 md:text-lg lg:mx-0">
               San Blas es conocido como el barrio de los artesanos y la creatividad, un lugar
               perfecto para que tu aventura cusqueña comience con energía positiva y auténtica.
@@ -69,8 +61,6 @@ export default function HomeHero() {
           </div>
         </Container>
       </div>
-
-      {/* 💻 IMAGEN LATERAL SOLO DESKTOP */}
       <div className="relative hidden lg:block lg:w-1/2">
         <img
           src="/bg-about-3.jpg"
