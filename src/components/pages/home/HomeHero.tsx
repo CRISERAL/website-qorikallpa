@@ -5,20 +5,34 @@ import { FaAngleRight } from 'react-icons/fa';
 
 export default function HomeHero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-cream-100 py-16 lg:min-h-[85vh] lg:py-20">
-      <div className="absolute inset-0 lg:hidden">
+    <section className="relative flex min-h-screen overflow-hidden bg-cream-100">
+      
+      {/* 📱 IMAGEN BACKGROUND SOLO MOBILE */}
+      <div className="absolute inset-0 z-0 lg:hidden">
         <img
           src="/bg-about-3.jpg"
           alt=""
           aria-hidden="true"
-          className="h-full w-full object-cover opacity-60 mask-[url('/mask.png')] mask-[180%_auto] mask-center mask-no-repeat [-webkit-mask-image:url('/mask.png')] [-webkit-mask-size:180%_auto] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center]"
+          className="
+            h-full w-full object-cover object-center opacity-60
+            mask-[url('/mask.png')]
+            mask-[180%_auto]
+            mask-center
+            mask-no-repeat
+            [-webkit-mask-image:url('/mask.png')]
+            [-webkit-mask-size:180%_auto]
+            [-webkit-mask-repeat:no-repeat]
+            [-webkit-mask-position:center]
+          "
         />
       </div>
 
-      <div className="absolute inset-0 bg-cream-100/50 lg:hidden" />
+      {/* overlay para mejorar lectura */}
+      <div className="absolute inset-0 bg-cream-100/70 z-0 lg:hidden" />
 
-      <Container className="relative z-10 w-full">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1.3fr]">
+      {/* 🟤 TEXTO */}
+      <div className="relative z-10 flex w-full items-center lg:w-1/2">
+        <Container>
           <div className="text-center lg:text-left">
             <h1 className="font-playfair text-4xl font-black leading-tight text-brown-900 sm:text-5xl md:text-6xl xl:text-7xl">
               Tu aventura
@@ -47,25 +61,33 @@ export default function HomeHero() {
             <div className="mt-8">
               <Link
                 href={routes.contact}
-                aria-label="Ir a la página de contacto"
-                className="inline-flex w-full items-center justify-center gap-2 bg-accent-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-accent-600 sm:w-auto"
+                className="inline-flex items-center gap-2 bg-accent-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-accent-600"
               >
-                Contáctanos <FaAngleRight aria-hidden="true" />
+                Contáctanos <FaAngleRight />
               </Link>
             </div>
           </div>
+        </Container>
+      </div>
 
-          <div className="hidden justify-end lg:flex">
-            <div className="relative h-[560px] w-full xl:h-[680px] 2xl:h-[720px]">
-              <img
-                src="/bg-about-3.jpg"
-                alt="Vista de San Blas en Cusco"
-                className="h-full w-full object-cover mask-[url('/mask.png')] mask-size-[100%_100%] mask-center mask-no-repeat [-webkit-mask-image:url('/mask.png')] [-webkit-mask-size:100%_100%] [-webkit-mask-repeat:no-repeat] [-webkit-mask-position:center]"
-              />
-            </div>
-          </div>
-        </div>
-      </Container>
+      {/* 💻 IMAGEN LATERAL SOLO DESKTOP */}
+      <div className="relative hidden lg:block lg:w-1/2">
+        <img
+          src="/bg-about-3.jpg"
+          alt="San Blas Cusco"
+          className="
+            h-full w-full object-cover object-center
+            mask-[url('/mask.png')]
+            mask-size-[120%_100%]
+            mask-position-left
+            mask-no-repeat
+            [-webkit-mask-image:url('/mask.png')]
+            [-webkit-mask-size:120%_100%]
+            [-webkit-mask-position:left]
+            [-webkit-mask-repeat:no-repeat]
+          "
+        />
+      </div>
     </section>
   );
 }
