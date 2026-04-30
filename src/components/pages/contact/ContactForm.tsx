@@ -18,9 +18,9 @@ interface FormErrors {
 }
 
 const inputClass =
-  'w-full bg-background border border-border px-4 py-3 text-sm text-foreground placeholder:text-stone-400 focus:outline-none focus:border-accent transition-colors';
+  'w-full bg-white border border-brown-300 px-4 py-3 text-sm text-brown-900 placeholder:text-brown-700/40 focus:outline-none focus:border-accent-500 transition-colors';
 
-const labelClass = 'block text-xs font-medium text-stone-500 uppercase tracking-widest mb-1.5';
+const labelClass = 'block text-xs font-bold text-brown-900 uppercase tracking-wide mb-2';
 
 export default function ContactForm() {
   const t = useTranslations('contact.info.form');
@@ -49,7 +49,7 @@ export default function ContactForm() {
     }
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -71,19 +71,17 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="flex flex-col items-center justify-center gap-4 py-12 text-center">
-        <FaCheckCircle className="w-12 h-12 text-accent" />
-        <h3 className="text-2xl font-bold text-foreground">{t('successTitle')}</h3>
-        <p className="text-sm text-stone-500 max-w-sm leading-relaxed">{t('successMessage')}</p>
+      <div className="flex flex-col items-center justify-center gap-6 py-12 text-center bg-cream-100 border border-brown-300 p-8">
+        <FaCheckCircle className="w-16 h-16 text-accent-500" />
+        <div className="space-y-2">
+          <h3 className="text-2xl font-bold text-brown-900">{t('successTitle')}</h3>
+          <p className="text-sm text-brown-700 max-w-sm leading-relaxed">{t('successMessage')}</p>
+        </div>
         <button
           onClick={() => setStatus('idle')}
-          className="mt-2 text-xs font-semibold text-accent uppercase tracking-widest hover:underline"
+          className="mt-2 inline-flex items-center gap-2 text-xs font-bold text-accent-500 uppercase tracking-wide hover:text-accent-600 transition-colors"
         >
-          ←{' '}
-          {t('submit')
-            .replace('Send', 'New')
-            .replace('Enviar', 'Nuevo')
-            .replace('Envoyer', 'Nouveau')}
+          ← Enviar otro mensaje
         </button>
       </div>
     );
@@ -95,7 +93,7 @@ export default function ContactForm() {
         {/* Name */}
         <div>
           <label htmlFor="contact-name" className={labelClass}>
-            {t('name')} <span className="text-accent">*</span>
+            {t('name')} <span className="text-accent-500">*</span>
           </label>
           <input
             id="contact-name"
@@ -110,7 +108,7 @@ export default function ContactForm() {
             aria-invalid={!!errors.name}
           />
           {errors.name && (
-            <p id="contact-name-error" className="mt-1 text-xs text-red-500">
+            <p id="contact-name-error" className="mt-1.5 text-xs text-red-600">
               {errors.name}
             </p>
           )}
@@ -119,7 +117,7 @@ export default function ContactForm() {
         {/* Email */}
         <div>
           <label htmlFor="contact-email" className={labelClass}>
-            {t('email')} <span className="text-accent">*</span>
+            {t('email')} <span className="text-accent-500">*</span>
           </label>
           <input
             id="contact-email"
@@ -134,7 +132,7 @@ export default function ContactForm() {
             aria-invalid={!!errors.email}
           />
           {errors.email && (
-            <p id="contact-email-error" className="mt-1 text-xs text-red-500">
+            <p id="contact-email-error" className="mt-1.5 text-xs text-red-600">
               {errors.email}
             </p>
           )}
@@ -161,7 +159,7 @@ export default function ContactForm() {
       {/* Message */}
       <div>
         <label htmlFor="contact-message" className={labelClass}>
-          {t('message')} <span className="text-accent">*</span>
+          {t('message')} <span className="text-accent-500">*</span>
         </label>
         <textarea
           id="contact-message"
@@ -175,22 +173,26 @@ export default function ContactForm() {
           aria-invalid={!!errors.message}
         />
         {errors.message && (
-          <p id="contact-message-error" className="mt-1 text-xs text-red-500">
+          <p id="contact-message-error" className="mt-1.5 text-xs text-red-600">
             {errors.message}
           </p>
         )}
       </div>
 
-      {status === 'error' && <p className="text-sm text-red-500">{t('errorMessage')}</p>}
+      {status === 'error' && (
+        <div className="p-3 bg-red-50 border border-red-200">
+          <p className="text-sm text-red-600">{t('errorMessage')}</p>
+        </div>
+      )}
 
       <div>
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="inline-flex items-center gap-2 px-8 py-3 bg-accent text-white text-xs font-semibold uppercase tracking-widest hover:bg-accent-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+          className="inline-flex items-center gap-2 px-8 py-3 bg-accent-500 text-white text-xs font-bold uppercase tracking-wide hover:bg-accent-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed shadow-md"
         >
           {status === 'sending' ? t('sending') : t('submit')}
-          {status !== 'sending' && <FaAngleRight className="w-3 h-3" />}
+          {status !== 'sending' && <FaAngleRight className="w-3.5 h-3.5" />}
         </button>
       </div>
     </form>
