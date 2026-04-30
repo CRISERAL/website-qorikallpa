@@ -68,8 +68,9 @@ export default function Header() {
             </div>
           </div>
         </div>
+        {/* Menú móvil desplegable - overlay absoluto */}
         {isMenuOpen && (
-          <div className="border-t border-brown-300 bg-cream-100">
+          <div className="absolute top-full left-0 right-0 border-t border-brown-300 bg-cream-100 shadow-lg z-50">
             <nav className="mx-auto max-w-7xl px-6 py-4">
               <ul className="flex flex-col gap-3">
                 {navLinks.map((link) => (
