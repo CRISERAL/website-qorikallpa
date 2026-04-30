@@ -29,24 +29,13 @@ const features = [
 export default function Home() {
   return (
     <>
-      {/* Decorative Kipu - Left Side Border (only on home page) */}
-      <div className="absolute left-0 top-0 h-screen w-auto z-[100] hidden lg:block pointer-events-none">
+      <div className="absolute left-0 top-0 h-screen w-auto z-100 hidden 2xl:block pointer-events-none">
         <img
           src="/icons/kipu.webp"
           alt="Kipu decorativo andino"
           className="h-full w-auto object-contain"
         />
       </div>
-
-      {/* Decorative Aribalo - Right Side Bottom (only on home page) */}
-      <div className="absolute right-4 top-[calc(100vh-300px)] w-40 h-auto z-[100] hidden lg:block pointer-events-none">
-        <img
-          src="/icons/aribalo.webp"
-          alt="Aribalo decorativo andino"
-          className="w-full h-auto object-contain drop-shadow-2xl"
-        />
-      </div>
-
       <section className="relative min-h-screen overflow-hidden bg-cream-100">
         <div className="absolute inset-0 z-0 lg:hidden">
           <img
@@ -85,6 +74,13 @@ export default function Home() {
               [-webkit-mask-repeat:no-repeat]
             "
           />
+          <div className="absolute right-0 bottom-0 w-50 h-auto z-100 hidden 2xl:block pointer-events-none">
+            <img
+              src="/icons/ceramica.webp"
+              alt="Aribalo decorativo andino"
+              className="w-full h-auto object-contain "
+            />
+          </div>
         </div>
 
         <Container className="relative z-10 grid min-h-screen items-center lg:grid-cols-2">
@@ -151,7 +147,7 @@ export default function Home() {
           </div>
         </Container>
       </section>
-      <section className="relative w-full">
+      <section className="relative w-full ">
         <img
           src="/bg-about.jpg"
           alt="Hostal Qorikallpa Cusco"
@@ -159,6 +155,20 @@ export default function Home() {
         />
       </section>
       <section className="relative overflow-hidden bg-cream-200 py-12">
+        <div className="absolute right-0 bottom-0 top-1/2 -translate-y-1/2 w-50 h-auto z-100 hidden 2xl:block pointer-events-none">
+          <img
+            src="/icons/marcador-2.webp"
+            alt="Aribalo decorativo andino"
+            className="w-full h-auto object-contain "
+          />
+        </div>
+        <div className="absolute left-0 scale-x-[-1] bottom-0 top-1/2 -translate-y-1/2 w-50 h-auto z-100 hidden 2xl:block pointer-events-none">
+          <img
+            src="/icons/marcador-2.webp"
+            alt="Aribalo decorativo andino"
+            className="w-full h-auto object-contain "
+          />
+        </div>
         <Container>
           <div className="py-12">
             <div className="mx-auto text-center">
