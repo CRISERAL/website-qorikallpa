@@ -1,11 +1,11 @@
 {
   "header": {
     "nav": {
-      "home": "INICIO",
-      "rooms": "HABITACIONES",
-      "services": "SERVICIOS",
-      "gallery": "GALERÍA",
-      "contact": "CONTACTO"
+      "home": "Inicio",
+      "rooms": "Habitaciones",
+      "services": "Servicios",
+      "gallery": "Galería",
+      "contact": "Contacto"
     }
   },
   "footer": {
@@ -15,28 +15,34 @@
   },
   "home": {
     "hero": {
-      "title": "Descanso con energía andina en San Blas, Cusco",
-      "description": "Tu hogar en el corazón del barrio artesano más auténtico de Cusco. Confort moderno, espíritu andino y servicio personalizado.",
-      "primaryButtonLabel": "Reservar ahora",
-      "secondaryButtonLabel": "Ver habitaciones"
-    },
-    "about": {
-      "title": "Hostal Koriqallpa",
-      "subtitle": "Descanso con energía andina",
-      "description": "Hostal Koriqallpa nace del amor por Cusco y su gente. Inspirados en las tradiciones del valle sagrado y el arte ancestral, creamos un espacio donde cada detalle cuenta. Desde nuestras habitaciones confortables hasta nuestro equipo atento y amable, tu bienestar es nuestra prioridad.\n\n San Blas es conocido como el barrio de los artesanos y la creatividad, un lugar perfecto para que tu aventura cusqueña comience con energía positiva y auténtica.",
+      "title": "Tu aventura\n comienza en",
+      "highlight": "San Blas",
+      "description": "San Blas es conocido como el barrio de los artesanos y la creatividad, unlugar perfecto para que tu aventura cusqueña comience con energía positiva y auténtica.",
       "primaryButtonLabel": "Contáctanos"
     },
-    "rooms": {
-      "title": "Espacios de Ensueño",
-      "subtitle": "Nuestras habitaciones",
-      "description": "Doble Andina, Triple San Blas o Suite Vista Cusco — cada espacio diseñado para tu comodidad.",
-      "primaryButtonLabel": "Explorar habitaciones"
+    "features": {
+      "items": [
+        {
+          "title": "Ubicación Privilegiada",
+          "description": "En el corazón de San Blas, Cusco."
+        },
+        {
+          "title": "Cultura Viva",
+          "description": "Rodeados de arte, tradición y creatividad."
+        },
+        {
+          "title": "Atención Cálida",
+          "description": "Hospitalidad andina que te hace sentir en casa."
+        },
+        {
+          "title": "Energía Positiva",
+          "description": "Un ambiente pensado para tu bienestar y descanso."
+        }
+      ]
     },
-    "services": {
-      "title": "Nuestros servicios",
-      "subtitle": "Todo lo que necesitas para tu estadía",
-      "description": "Desayuno típico andino, asesoría turística, tours guiados, arte cusqueño y atención personalizada las 24 horas.",
-      "primaryButtonLabel": "Ver servicios"
+    "about": {
+      "title": "Vive la esencia andina",
+      "description": "Cada rincón de nuestro hostal refleja la cultura, el arte y la calidez de nuestro pueblo. Aquí, cada detalle está hecho con amor para que tu estadía sea inolvidable."
     }
   },
   "gallery": {
