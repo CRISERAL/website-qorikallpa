@@ -29,6 +29,24 @@ const features = [
 export default function Home() {
   return (
     <>
+      {/* Decorative Kipu - Left Side Border (only on home page) */}
+      <div className="absolute left-0 top-0 h-screen w-auto z-[100] hidden lg:block pointer-events-none">
+        <img
+          src="/icons/kipu.webp"
+          alt="Kipu decorativo andino"
+          className="h-full w-auto object-contain"
+        />
+      </div>
+
+      {/* Decorative Aribalo - Right Side Bottom (only on home page) */}
+      <div className="absolute right-4 top-[calc(100vh-300px)] w-40 h-auto z-[100] hidden lg:block pointer-events-none">
+        <img
+          src="/icons/aribalo.webp"
+          alt="Aribalo decorativo andino"
+          className="w-full h-auto object-contain drop-shadow-2xl"
+        />
+      </div>
+
       <section className="relative min-h-screen overflow-hidden bg-cream-100">
         <div className="absolute inset-0 z-0 lg:hidden">
           <img

@@ -8,11 +8,10 @@ interface Props {
 
 export default function MainLayout({ children }: Props) {
   return (
-    <>
-    <img src="icons/kipu.webp" alt="" className='absolute z-100'/>
+    <div className="relative min-h-screen overflow-x-hidden">
       <Header />
       <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }
