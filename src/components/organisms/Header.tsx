@@ -22,82 +22,72 @@ export default function Header() {
   ];
 
   return (
-    <header className="relative z-50 bg-background shadow-md">
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/textura-de-seda.webp"
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <div className="flex items-center justify-between py-3">
-            <div className="w-10 lg:w-24">
-              <button
-                onClick={toggleMenu}
-                className="flex items-center justify-center w-10 h-10 text-foreground hover:text-accent transition-colors lg:hidden"
-                aria-label="Toggle menu"
-              >
-                {isMenuOpen ? <FaTimes className="w-5 h-5" /> : <FaBars className="w-5 h-5" />}
-              </button>
-            </div>
-            <Link href={routes.home} className="shrink-0">
-              <img src="/logo.webp" alt="Hostal Koriqallpa" className="h-14 w-auto" />
+    <header className="relative z-50 bg-cream-100 shadow-md">
+      <div className="hidden lg:block">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex items-center justify-between py-4">
+            <Link href={routes.home} className="flex items-center gap-4">
+              <img src="/logo.webp" alt="Hostal Korikallpa" className="h-16 w-auto" />
             </Link>
-            <div className="flex items-center justify-end w-10 lg:w-24">
+            <nav className="flex-1 flex justify-center">
+              <ul className="flex items-center gap-8">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm font-bold text-brown-900 hover:text-accent-500 transition-colors tracking-wide uppercase relative group"
+                    >
+                      {link.label}
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="flex items-center">
               <LanguageSelector />
             </div>
           </div>
         </div>
       </div>
-      <nav className="hidden lg:block relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/textura-de-seda.webp"
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-black/40" />
+      <div className="lg:hidden">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex items-center justify-between py-3">
+            <button
+              onClick={toggleMenu}
+              className="flex items-center justify-center w-10 h-10 text-brown-900 hover:text-accent-500 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <FaTimes className="w-5 h-5" /> : <FaBars className="w-5 h-5" />}
+            </button>
+            <Link href={routes.home} className="flex items-center gap-2">
+              <img src="/logo.webp" alt="Hostal Korikallpa" className="h-12 w-auto" />
+            </Link>
+            <div className="flex items-center">
+              <LanguageSelector />
+            </div>
+          </div>
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl px-6">
-          <ul className="flex items-center justify-center gap-10 py-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-base font-bold text-white hover:text-[#C8860A] transition-colors tracking-wide relative group drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-      {isMenuOpen && (
-        <div className="lg:hidden border-t border-border bg-muted">
-          <nav className="mx-auto max-w-7xl px-6 py-4">
-            <ul className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="block text-xs font-semibold text-secondary hover:text-accent transition-colors tracking-wider py-2"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      )}
+        {isMenuOpen && (
+          <div className="border-t border-brown-300 bg-cream-100">
+            <nav className="mx-auto max-w-7xl px-6 py-4">
+              <ul className="flex flex-col gap-3">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block text-sm font-bold text-brown-900 hover:text-accent-500 transition-colors tracking-wide uppercase py-2"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   );
 }
