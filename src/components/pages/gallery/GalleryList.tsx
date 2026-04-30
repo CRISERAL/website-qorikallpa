@@ -1,44 +1,22 @@
-'use client';
-
+import { getAllGallery } from '@/src/api/strapi/getAllGallery';
 import environment from '@/src/environment';
 import { cn } from '@/src/lib/cn';
-import { GalleryListEntity } from '@/src/types/pages/Gallery';
-import { useState } from 'react';
 import Container from '../../templates/Container';
-import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
 
-interface Props {
-  data: GalleryListEntity;
-}
-export default function GalleryList({ data }: Props) {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
-
-  const galleryImages = data.images.map((image) => ({
-    src: `${environment.strapi.apiEndpoint}${image.src.url}`,
-    alt: image.alt,
-    title: image.alt,
-    category: image.category,
-  }));
-
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
-
+export default async function GalleryList() {
+  const response = await getAllGallery();
+  const images = response.data.flatMap((gallery) => gallery.images);
   const rotations = ['-rotate-2', 'rotate-1', '-rotate-1', 'rotate-2'];
-
   return (
     <section className="py-12">
       <Container>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 py-6">
-          {galleryImages.map((image, index) => {
+          {images.map((image, index) => {
+            const imageUrl = image.formats?.medium?.url || image.url;
             const rotation = rotations[index % rotations.length];
             return (
               <div
-                key={index}
-                onClick={() => openLightbox(index)}
+                key={image.id}
                 className={cn(
                   'group cursor-pointer transition-all duration-300 hover:scale-105 hover:rotate-0 hover:z-10 relative',
                   rotation
@@ -46,7 +24,11 @@ export default function GalleryList({ data }: Props) {
               >
                 <div className="p-3 pb-6 bg-card">
                   <div className="relative aspect-square overflow-hidden">
-                    <img src={image.src} alt={image.alt} className="w-full h-full object-cover" />
+                    <img
+                      src={`${environment.strapi.apiEndpoint}${imageUrl}`}
+                      alt={image.alternativeText || image.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -54,22 +36,6 @@ export default function GalleryList({ data }: Props) {
           })}
         </div>
       </Container>
-
-      <Lightbox
-        open={lightboxOpen}
-        close={() => setLightboxOpen(false)}
-        index={lightboxIndex}
-        slides={galleryImages.map((img) => ({
-          src: img.src,
-          title: img.title,
-        }))}
-        styles={{
-          container: {
-            width: '100vw',
-            maxWidth: '100%',
-          },
-        }}
-      />
     </section>
   );
 }

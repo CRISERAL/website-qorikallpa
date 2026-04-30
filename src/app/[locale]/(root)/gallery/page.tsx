@@ -25,7 +25,7 @@ function renderComponent(component: GalleryBlocks, index: number, t: Translator)
       );
 
     case 'gallery.gallery-list':
-      return <GalleryList key={key} data={component as GalleryListEntity} />;
+      return <GalleryList key={key} />;
 
     default:
       return null;
