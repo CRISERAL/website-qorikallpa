@@ -1,36 +1,12 @@
 import { getAllRoomsByLocale } from '@/src/api/backend/getAllRoomsByLocale';
 
-interface Habitacion {
-  id: string;
-  nro_habitacion: string;
-  tipo_habitacion: {
-    id: string;
-    nombre: string;
-  };
-  piso: number;
-  feature: string | null;
-  amenities: string | null;
-  url_imagen: string[] | null;
-  estado: boolean;
-  descripcion: string | null;
-  promociones: unknown[];
-}
-
-interface RoomItem {
-  habitacion: Habitacion;
-  precio_noche: number | null;
-}
-
 interface Props {
   locale: string;
-  fecha_inicio?: string;
-  fecha_fin?: string;
 }
 
-export default async function RoomsListV2({ locale, fecha_inicio, fecha_fin }: Props) {
+export default async function RoomsListV2({ locale }: Props) {
   const res = await getAllRoomsByLocale(locale);
-
-  const content: RoomItem[] = res.data;
+  const content = res.data;
 
   return (
     <section className="p-6">

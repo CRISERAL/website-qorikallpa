@@ -1,7 +1,7 @@
 import { getAllGallery } from '@/src/api/strapi/getAllGallery';
-import environment from '@/src/environment';
 import { cn } from '@/src/lib/cn';
 import Container from '../../templates/Container';
+import env from '@/src/environment';
 
 export default async function GalleryList() {
   const response = await getAllGallery();
@@ -25,7 +25,7 @@ export default async function GalleryList() {
                 <div className="p-3 pb-6 bg-card">
                   <div className="relative aspect-square overflow-hidden">
                     <img
-                      src={`${environment.strapi.apiEndpoint}${imageUrl}`}
+                      src={`${env.strapi.api}${imageUrl}`}
                       alt={image.alternativeText || image.name}
                       className="w-full h-full object-cover"
                     />

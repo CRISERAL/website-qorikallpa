@@ -1,11 +1,11 @@
-import environment from '@/src/environment';
+import env from '@/src/environment';
 import { Gallery } from '@/src/types/collection-types/gallery';
 import { StrapiResponse } from '@/src/types/Strapi';
 
 export async function getAllGallery(): Promise<StrapiResponse<Gallery[]>> {
-  const res = await fetch(`${environment.strapi.apiEndpoint}/api/galleries?populate=*`, {
+  const res = await fetch(`${env.strapi.api}/api/galleries?populate=*`, {
     headers: {
-      Authorization: `Bearer ${process.env.STRAPI_TOKEN}`,
+      Authorization: `Bearer ${env.strapi.token}`,
     },
     next: { revalidate: 0 },
   });

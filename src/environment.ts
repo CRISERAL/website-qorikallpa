@@ -1,16 +1,14 @@
-const protocol = process.env.NEXT_PUBLIC_STRAPI_PROTOCOL || 'http';
-const host = process.env.NEXT_PUBLIC_STRAPI_HOST || 'localhost';
-const port = process.env.NEXT_PUBLIC_STRAPI_PORT;
-const apiBackend = process.env.NEXT_PUBLIC_API_BACKEND || 'http://localhost:3000';
+const protocol = process.env.STRAPI_PROTOCOL;
+const host = process.env.STRAPI_HOST;
 
-const environment = {
+const env = {
   strapi: {
-    apiEndpoint: port ? `${protocol}://${host}:${port}` : `${protocol}://${host}`,
+    api: `${protocol}://${host}`,
+    token: process.env.STRAPI_TOKEN,
   },
-  apiBackend,
   backend: {
-    apiEndpoint: process.env.NEXT_PUBLIC_API_BACKEND,
+    api: process.env.API_BACKEND,
   },
 };
 
-export default environment;
+export default env;

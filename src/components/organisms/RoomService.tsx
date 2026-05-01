@@ -1,4 +1,4 @@
-import environment from '@/src/environment';
+import env from '@/src/environment';
 import { cn } from '@/src/lib/cn';
 import { Service } from '@/src/types/collection-types/service';
 
@@ -8,9 +8,7 @@ interface Props {
 }
 
 export default function RoomService({ data, className }: Props) {
-  const imageUrl = data.image.url
-    ? `${environment.strapi.apiEndpoint}${data.image.url}`
-    : '/placeholder-room.png';
+  const imageUrl = data.image.url ? `${env.strapi.api}${data.image.url}` : '/placeholder-room.png';
   return (
     <div
       className={cn(

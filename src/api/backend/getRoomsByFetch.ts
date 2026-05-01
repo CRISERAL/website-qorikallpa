@@ -1,4 +1,4 @@
-import environment from '@/src/environment';
+import env from '@/src/environment';
 import { ApiResponse, HabitacionWithPrice } from '@/src/types/api/habitacion';
 
 interface Props {
@@ -21,12 +21,9 @@ export async function getRoomsByFetch({
     params.set('fecha_fin', fecha_fin);
   }
 
-  const res = await fetch(
-    `${environment.backend.apiEndpoint}/api/public/habitaciones?${params.toString()}`,
-    {
-      cache: 'no-store',
-    }
-  );
+  const res = await fetch(`${env.backend.api}/api/public/habitaciones?${params.toString()}`, {
+    cache: 'no-store',
+  });
   if (!res.ok) {
     throw new Error(`Error al obtener habitaciones: ${res.status}`);
   }

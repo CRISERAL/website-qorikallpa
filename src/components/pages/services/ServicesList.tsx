@@ -1,6 +1,6 @@
 import { getAllServices } from '@/src/api/strapi/getAllServices';
 import Container from '@/src/components/templates/Container';
-import environment from '@/src/environment';
+import env from '@/src/environment';
 
 interface Props {
   locale: string;
@@ -18,7 +18,7 @@ export default async function ServicesList({ locale }: Props) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => {
             const imageUrl = service.image?.url
-              ? `${environment.strapi.apiEndpoint}${service.image.url}`
+              ? `${env.strapi.api}${service.image.url}`
               : '/placeholder-room.png';
 
             const rotate = rotations[i % rotations.length];
