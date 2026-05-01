@@ -14,11 +14,8 @@ type Props = {
 export default async function Rooms({ params, searchParams }: Props) {
   const { locale } = await params;
   const filters = await searchParams;
-
   setRequestLocale(locale);
-
   const t = await getTranslations('rooms.hero');
-
   return (
     <>
       <SharedHero

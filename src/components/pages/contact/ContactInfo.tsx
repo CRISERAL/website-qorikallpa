@@ -5,10 +5,6 @@ import { useTranslations } from 'next-intl';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa';
 import ContactForm from '@/src/components/pages/contact/ContactForm';
 
-interface Props {
-  data: ContactInfoEntity;
-}
-
 interface InfoItemProps {
   icon: React.ReactNode;
   label: string;
@@ -41,7 +37,7 @@ function InfoItem({ icon, label, value, href }: InfoItemProps) {
   );
 }
 
-export default function ContactInfo({ data: _ }: Props) {
+export default function ContactInfo() {
   const t = useTranslations('contact.info');
 
   const items = [
