@@ -1,15 +1,13 @@
 import env from '@/src/environment';
-import { ApiResponse, HabitacionWithPrice } from '@/src/types/api/habitacion';
-import { Habitacion } from '@/src/types/models/Habitacion';
-import { Tarifa } from '@/src/types/models/Tarifa';
-
-interface RoomItem {
-  habitacion: Habitacion;
-  tarifa: Tarifa;
-}
+import { ApiResponse } from '@/src/types/api/habitacion';
+import { RoomItem } from '@/src/types/models/RoomItem';
 
 export async function getAllRoomsByLocale(locale: string): Promise<ApiResponse<RoomItem[]>> {
   const res = await fetch(`${env.backend.api}/api/public/habitaciones?locale=${locale}`);
+
+  if (!res.ok) {
+    throw new Error(`Error API: ${res.status}`);
+  }
 
   return res.json();
 }
