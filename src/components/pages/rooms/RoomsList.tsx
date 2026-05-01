@@ -222,14 +222,12 @@ export default function RoomsList() {
                         </div>
                         <div className="py-2 px-1 text-center">
                           <p className="text-xs font-semibold truncate text-stone-600">
-                            Habitación {habitacion.nro_habitacion}
+                            Habitación
                           </p>
                           <p className="text-xs uppercase tracking-widest text-muted-foreground mt-0.5">
-                            {habitacion.tipo_habitacion?.nombre}
+                            tipo
                           </p>
-                          <p className="text-xs text-muted-foreground mt-0.5">
-                            Piso {habitacion.piso}
-                          </p>
+                          <p className="text-xs text-muted-foreground mt-0.5">Piso</p>
                         </div>
                       </div>
                     </div>

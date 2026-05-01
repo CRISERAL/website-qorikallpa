@@ -1,4 +1,6 @@
 import { getAllRoomsByLocale } from '@/src/api/backend/getAllRoomsByLocale';
+import Container from '../../templates/Container';
+import { cn } from '@/src/lib/cn';
 
 interface Props {
   locale: string;
@@ -7,50 +9,54 @@ interface Props {
 export default async function RoomsListV2({ locale }: Props) {
   const res = await getAllRoomsByLocale(locale);
   const content = res.data;
+  console.log('Fetched rooms data:', content);
 
   return (
-    <section className="p-6">
-      <h2 className="text-2xl font-bold mb-6">Habitaciones Disponibles</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {content.map((item) => (
-          <div key={item.habitacion.id} className="border rounded-lg overflow-hidden shadow-md">
-            {item.habitacion.url_imagen && item.habitacion.url_imagen.length > 0 && (
-              <img
-                src={item.habitacion.url_imagen[0]}
-                alt={`Habitación ${item.habitacion.nro_habitacion}`}
-                className="w-full h-48 object-cover"
-              />
-            )}
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="text-xl font-semibold">
-                  Habitación {item.habitacion.nro_habitacion}
-                </h3>
-                <span
-                  className={`px-2 py-1 rounded text-sm ${item.habitacion.estado ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}
-                >
-                  {item.habitacion.estado ? 'Disponible' : 'No disponible'}
-                </span>
-              </div>
-              <p className="text-gray-600 text-sm mb-2">{item.habitacion.tipo_habitacion.nombre}</p>
-              <p className="text-gray-700 mb-2">Piso: {item.habitacion.piso}</p>
-              <p className="text-gray-600 text-sm mb-2">{item.habitacion.descripcion}</p>
-              {item.habitacion.amenities && (
-                <div className="mt-2">
-                  <p className="text-sm font-medium text-gray-500">Amenities:</p>
-                  <p className="text-sm text-gray-600">{item.habitacion.amenities}</p>
-                </div>
-              )}
-              {item.habitacion.feature && (
-                <div className="mt-2">
-                  <p className="text-sm font-medium text-gray-500">Características:</p>
-                  <p className="text-sm text-gray-600">{item.habitacion.feature}</p>
-                </div>
-              )}
+    <section className="py-16">
+      <Container>
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="w-full lg:w-64 shrink-0"></div>
+          <div className="flex-1">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {content.map((item, i) => {
+                const rotations = ['-rotate-3', 'rotate-1', '-rotate-1', 'rotate-2'];
+                const rotate = rotations[i % rotations.length];
+                return (
+                  <div
+                    key={item.habitacion.id}
+                    className={cn(
+                      'flex-1 min-w-0 transition-all duration-300 hover:scale-105 hover:rotate-0 hover:z-10 relative shadow',
+                      rotate
+                    )}
+                  >
+                    <div className="p-2 pb-0 bg-card">
+                      <div className="aspect-square overflow-hidden relative">
+                        {item.habitacion.url_imagen && item.habitacion.url_imagen.length > 0 && (
+                          <img
+                            src={item.habitacion.url_imagen[0]}
+                            alt={`Habitación ${item.habitacion.nro_habitacion}`}
+                            className="w-full h-full object-cover"
+                          />
+                        )}
+                        {item.tarifa.precio && (
+                          <div className="absolute top-2 left-2 bg-accent text-white text-xs font-bold px-1.5 py-0.5 leading-none">
+                            S/{item.tarifa.precio}
+                          </div>
+                        )}
+                      </div>
+                      <div className="py-2 px-1 text-center">
+                        <p className="text-xs uppercase tracking-widest text-muted-foreground mt-0.5">
+                          {item.habitacion.tipo_habitacion.nombre}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      </Container>
     </section>
   );
 }
