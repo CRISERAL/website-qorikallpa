@@ -1,7 +1,11 @@
+'use client';
 
-
+import { getRoomById } from '@/src/api/backend/getRoomById';
 import { cn } from '@/src/lib/cn';
+import { ApiResponse } from '@/src/types/api/habitacion';
 import { RoomItem } from '@/src/types/models/RoomItem';
+import { useState } from 'react';
+import RoomModal from './RoomModal';
 
 interface Props {
   rooms: RoomItem[];
@@ -9,8 +13,31 @@ interface Props {
 }
 
 export default function RoomsGridClient({ rooms, locale }: Props) {
+  const [roomSelected, setRoomSelected] = useState<RoomItem | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
+  const handleOpenRoom = async (id: string) => {
+    try {
+      setIsOpen(true);
+      setLoading(true);
+      setRoomSelected(null);
 
+      const res: ApiResponse<RoomItem> = await getRoomById(id, locale);
+      if (res.success && res.data) {
+        setRoomSelected(res.data);
+      }
+    } catch (error) {
+      console.error('Error al obtener la habitación:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+    setRoomSelected(null);
+  };
 
   return (
     <>
@@ -22,6 +49,8 @@ export default function RoomsGridClient({ rooms, locale }: Props) {
             <div
               key={item.habitacion.id}
               role="button"
+              tabIndex={0}
+              onClick={() => handleOpenRoom(item.habitacion.id)}
               className={cn(
                 'flex-1 min-w-0 transition-all duration-300 hover:scale-105 hover:rotate-0 hover:z-10 relative shadow',
                 rotate
@@ -52,7 +81,7 @@ export default function RoomsGridClient({ rooms, locale }: Props) {
           );
         })}
       </div>
-
+      <RoomModal open={isOpen} loading={loading} room={roomSelected} onClose={handleCloseModal} />
     </>
   );
 }
