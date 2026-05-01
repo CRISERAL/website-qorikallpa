@@ -27,16 +27,27 @@ export default function RoomsFilterClient({
     const fecha_inicio = formData.get('fecha_inicio')?.toString();
     const fecha_fin = formData.get('fecha_fin')?.toString();
 
-    if (tipo) params.set('tipo', tipo);
-    else params.delete('tipo');
+    if (tipo) {
+      params.set('tipo', tipo);
+    } else {
+      params.delete('tipo');
+    }
 
-    if (fecha_inicio) params.set('fecha_inicio', fecha_inicio);
-    else params.delete('fecha_inicio');
+    if (fecha_inicio) {
+      params.set('fecha_inicio', `${fecha_inicio}T00:00:00.000Z`);
+    } else {
+      params.delete('fecha_inicio');
+    }
 
-    if (fecha_fin) params.set('fecha_fin', fecha_fin);
-    else params.delete('fecha_fin');
+    if (fecha_fin) {
+      params.set('fecha_fin', `${fecha_fin}T00:00:00.000Z`);
+    } else {
+      params.delete('fecha_fin');
+    }
 
-    router.push(`${pathname}?${params.toString()}`);
+    const query = params.toString();
+
+    router.push(query ? `${pathname}?${query}` : pathname);
   }
 
   function clearFilters() {
@@ -63,19 +74,27 @@ export default function RoomsFilterClient({
         </select>
       </div>
 
-      <input
-        type="date"
-        name="fecha_inicio"
-        defaultValue={currentFechaInicio ?? ''}
-        className="w-full rounded-lg border px-3 py-2"
-      />
+      <div>
+        <label className="mb-2 block text-sm font-medium">Fecha inicio</label>
 
-      <input
-        type="date"
-        name="fecha_fin"
-        defaultValue={currentFechaFin ?? ''}
-        className="w-full rounded-lg border px-3 py-2"
-      />
+        <input
+          type="date"
+          name="fecha_inicio"
+          defaultValue={currentFechaInicio?.split('T')[0] ?? ''}
+          className="w-full rounded-lg border px-3 py-2"
+        />
+      </div>
+
+      <div>
+        <label className="mb-2 block text-sm font-medium">Fecha fin</label>
+
+        <input
+          type="date"
+          name="fecha_fin"
+          defaultValue={currentFechaFin?.split('T')[0] ?? ''}
+          className="w-full rounded-lg border px-3 py-2"
+        />
+      </div>
 
       <button type="submit" className="w-full rounded-lg bg-brown-900 px-4 py-2 text-white">
         Buscar
