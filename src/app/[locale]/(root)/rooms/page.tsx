@@ -4,11 +4,19 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 type Props = {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{
+    tipo?: string;
+    fecha_inicio?: string;
+    fecha_fin?: string;
+  }>;
 };
 
-export default async function Rooms({ params }: Props) {
+export default async function Rooms({ params, searchParams }: Props) {
   const { locale } = await params;
+  const filters = await searchParams;
+
   setRequestLocale(locale);
+
   const t = await getTranslations('rooms.hero');
 
   return (
@@ -18,7 +26,8 @@ export default async function Rooms({ params }: Props) {
         description={t('description')}
         backgroundImage="/bg-about-2.jpg"
       />
-      <RoomsListV2 locale={locale} />
+
+      <RoomsListV2 locale={locale} searchParams={filters} />
     </>
   );
 }
