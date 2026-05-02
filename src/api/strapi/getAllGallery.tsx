@@ -2,8 +2,8 @@ import env from '@/src/environment';
 import { Gallery } from '@/src/types/collection-types/gallery';
 import { StrapiResponse } from '@/src/types/Strapi';
 
-export async function getAllGallery(): Promise<StrapiResponse<Gallery[]>> {
-  const res = await fetch(`${env.strapi.api}/api/galleries?populate=*`, {
+export async function getAllGallery(locale: string): Promise<StrapiResponse<Gallery[]>> {
+  const res = await fetch(`${env.strapi.api}/api/galleries?populate=*&locale=${locale}`, {
     headers: {
       Authorization: `Bearer ${env.strapi.token}`,
     },

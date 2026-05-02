@@ -18,7 +18,7 @@ export default async function Gallery({ params }: Props) {
         description={t('description')}
         backgroundImage="/bg-about-2.jpg"
       />
-      <GalleryList />
+      <GalleryList locale={locale} />
     </>
   );
 }

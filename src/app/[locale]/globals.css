@@ -45,3 +45,17 @@
   --font-lato: var(--font-lato);
   --font-playfair: var(--font-playfair);
 }
+
+.marquee-inner {
+  animation: marqueeScrollX linear infinite;
+}
+
+@keyframes marqueeScrollX {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

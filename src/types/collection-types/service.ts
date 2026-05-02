@@ -4,7 +4,5 @@ export interface Service {
   id: number;
   title: string;
   description: string;
-  price: string;
-  images: StrapiImage[];
-  details: string;
+  image: StrapiImage;
 }
