@@ -1,4 +1,4 @@
-import GalleryList from '@/src/components/pages/gallery/GalleryList';
+import GalleryList from '@/src/app/[locale]/(root)/gallery/components/GalleryList';
 import SharedHero from '@/src/components/pages/SharedHero';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 

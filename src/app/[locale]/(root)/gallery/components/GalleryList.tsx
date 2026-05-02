@@ -1,6 +1,6 @@
 import { getAllGallery } from '@/src/api/strapi/getAllGallery';
 import { cn } from '@/src/lib/cn';
-import Container from '../../templates/Container';
+import Container from '../../../../../components/templates/Container';
 import env from '@/src/environment';
 
 export default async function GalleryList() {

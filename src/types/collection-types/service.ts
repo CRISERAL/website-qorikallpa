@@ -5,6 +5,6 @@ export interface Service {
   title: string;
   description: string;
   price: string;
-  image: StrapiImage;
+  images: StrapiImage[];
   details: string;
 }
