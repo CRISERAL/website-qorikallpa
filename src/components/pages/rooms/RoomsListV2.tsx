@@ -29,16 +29,51 @@ export default async function RoomsListV2({ locale, searchParams }: Props) {
     <section className="py-16">
       <Container>
         <div className="flex flex-col lg:flex-row gap-8">
-          <div className="w-full lg:w-64 shrink-0">
+          <div className="flex-1">
             <RoomsFilterClient
               roomTypes={contentType}
               currentTipo={searchParams.tipo}
               currentFechaInicio={searchParams.fecha_inicio}
               currentFechaFin={searchParams.fecha_fin}
             />
-          </div>
-          <div className="flex-1">
             <RoomsGridClient rooms={rooms.data} locale={locale} />
+          </div>
+          <div className="w-full lg:w-80 shrink-0">
+            <div className="bg-white border border-gray-200 p-6 shadow-sm">
+              <div className="space-y-8">
+                <div className="text-center">
+                  <h3 className="text-lg font-bold uppercase tracking-wider mb-3">DINING</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Peruvian cuisine restaurant, fine dining restaurant with live opera shows and
+                    lobby bar with Peruvian liqueurs
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="text-lg font-bold uppercase tracking-wider mb-3">FEATURES</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Extensive Cusco School art collection, massage room with treatments using local
+                    ingredients, San Antonio Abad chapel
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="text-lg font-bold uppercase tracking-wider mb-3">ACTIVITIES</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Art tour experience through our 17th century original paintings
+                  </p>
+                </div>
+
+                <div className="text-center">
+                  <h3 className="text-lg font-bold uppercase tracking-wider mb-3">
+                    ALL STAYS INCLUDE
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Wi-Fi, water, breakfast, complimentary activities and welcome tea
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

@@ -19,12 +19,6 @@ export default async function Rooms({ params, searchParams }: Props) {
   const t = await getTranslations('rooms.hero');
   return (
     <MainLayout>
-      <SharedHero
-        title={t('title')}
-        description={t('description')}
-        backgroundImage="/bg-about-2.jpg"
-      />
-
       <RoomsListV2 locale={locale} searchParams={filters} />
     </MainLayout>
   );
