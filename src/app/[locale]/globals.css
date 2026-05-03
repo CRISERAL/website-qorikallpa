@@ -1,61 +1,61 @@
 @import 'tailwindcss';
 
 :root {
-  /* 🎯 Base */
-  --cream-50: #fdfaf6;
-  --cream-100: #f7f1e8;
-  --cream-200: #efe3d1;
-  --cream-300: #e5d2b8;
-
-  /* 🎯 Marrones */
-  --brown-300: #cdb89f;
-  --brown-700: #5f4634;
-  --brown-800: #3e2a1f;
-  --brown-900: #2c1a0e;
-
-  /* 🎯 Accent (naranja andino) */
-  --accent-500: #c0521a;
-  --accent-600: #a84416;
-
-  /* 🎯 Dorado */
-  --gold-500: #c8922a;
-
-  /* 🎯 Background */
-  --background: var(--cream-100);
+  --color-primary: #a33b0e;
+  --color-secondary: #d4a34d;
+  --color-tertiary: #5d3a24;
+  --color-neutral: #f2e8d5;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-primary-50: color-mix(in oklab, var(--color-primary) 10%, white);
+  --color-primary-100: color-mix(in oklab, var(--color-primary) 20%, white);
+  --color-primary-200: color-mix(in oklab, var(--color-primary) 35%, white);
+  --color-primary-300: color-mix(in oklab, var(--color-primary) 50%, white);
+  --color-primary-400: color-mix(in oklab, var(--color-primary) 75%, white);
+  --color-primary-500: var(--color-primary);
+  --color-primary-600: color-mix(in oklab, var(--color-primary) 90%, black);
+  --color-primary-700: color-mix(in oklab, var(--color-primary) 75%, black);
+  --color-primary-800: color-mix(in oklab, var(--color-primary) 55%, black);
+  --color-primary-900: color-mix(in oklab, var(--color-primary) 35%, black);
+  --color-primary-950: color-mix(in oklab, var(--color-primary) 20%, black);
 
-  --color-cream-50: var(--cream-50);
-  --color-cream-100: var(--cream-100);
-  --color-cream-200: var(--cream-200);
-  --color-cream-300: var(--cream-300);
+  --color-secondary-50: color-mix(in oklab, var(--color-secondary) 10%, white);
+  --color-secondary-100: color-mix(in oklab, var(--color-secondary) 20%, white);
+  --color-secondary-200: color-mix(in oklab, var(--color-secondary) 35%, white);
+  --color-secondary-300: color-mix(in oklab, var(--color-secondary) 50%, white);
+  --color-secondary-400: color-mix(in oklab, var(--color-secondary) 75%, white);
+  --color-secondary-500: var(--color-secondary);
+  --color-secondary-600: color-mix(in oklab, var(--color-secondary) 90%, black);
+  --color-secondary-700: color-mix(in oklab, var(--color-secondary) 75%, black);
+  --color-secondary-800: color-mix(in oklab, var(--color-secondary) 55%, black);
+  --color-secondary-900: color-mix(in oklab, var(--color-secondary) 35%, black);
+  --color-secondary-950: color-mix(in oklab, var(--color-secondary) 20%, black);
 
-  --color-brown-300: var(--brown-300);
-  --color-brown-700: var(--brown-700);
-  --color-brown-800: var(--brown-800);
-  --color-brown-900: var(--brown-900);
+  --color-tertiary-50: color-mix(in oklab, var(--color-tertiary) 10%, white);
+  --color-tertiary-100: color-mix(in oklab, var(--color-tertiary) 20%, white);
+  --color-tertiary-200: color-mix(in oklab, var(--color-tertiary) 35%, white);
+  --color-tertiary-300: color-mix(in oklab, var(--color-tertiary) 50%, white);
+  --color-tertiary-400: color-mix(in oklab, var(--color-tertiary) 75%, white);
+  --color-tertiary-500: var(--color-tertiary);
+  --color-tertiary-600: color-mix(in oklab, var(--color-tertiary) 90%, black);
+  --color-tertiary-700: color-mix(in oklab, var(--color-tertiary) 75%, black);
+  --color-tertiary-800: color-mix(in oklab, var(--color-tertiary) 55%, black);
+  --color-tertiary-900: color-mix(in oklab, var(--color-tertiary) 35%, black);
+  --color-tertiary-950: color-mix(in oklab, var(--color-tertiary) 20%, black);
 
-  --color-accent-500: var(--accent-500);
-  --color-accent-600: var(--accent-600);
-
-  --color-gold-500: var(--gold-500);
+  --color-neutral-50: color-mix(in oklab, var(--color-neutral) 10%, white);
+  --color-neutral-100: color-mix(in oklab, var(--color-neutral) 20%, white);
+  --color-neutral-200: color-mix(in oklab, var(--color-neutral) 35%, white);
+  --color-neutral-300: color-mix(in oklab, var(--color-neutral) 50%, white);
+  --color-neutral-400: color-mix(in oklab, var(--color-neutral) 75%, white);
+  --color-neutral-500: var(--color-neutral);
+  --color-neutral-600: color-mix(in oklab, var(--color-neutral) 90%, black);
+  --color-neutral-700: color-mix(in oklab, var(--color-neutral) 75%, black);
+  --color-neutral-800: color-mix(in oklab, var(--color-neutral) 55%, black);
+  --color-neutral-900: color-mix(in oklab, var(--color-neutral) 35%, black);
+  --color-neutral-950: color-mix(in oklab, var(--color-neutral) 20%, black);
 
   --font-lato: var(--font-lato);
   --font-playfair: var(--font-playfair);
-}
-
-.marquee-inner {
-  animation: marqueeScrollX linear infinite;
-}
-
-@keyframes marqueeScrollX {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
 }

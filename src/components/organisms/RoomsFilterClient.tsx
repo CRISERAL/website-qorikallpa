@@ -55,7 +55,7 @@ export default function RoomsFilterClient({
   }
 
   return (
-    <form action={handleSubmit} className="space-y-4 rounded-xl border p-4">
+    <form action={handleSubmit} className="space-y-4 border p-4">
       <div>
         <label className="mb-2 block text-sm font-medium">Tipo de habitación</label>
 
@@ -96,11 +96,15 @@ export default function RoomsFilterClient({
         />
       </div>
 
-      <button type="submit" className="w-full rounded-lg bg-brown-900 px-4 py-2 text-white">
+      <button type="submit" className="bg-[linear-gradient(to_right,var(--color-primary-500)_70%,#BB5E05_100%)] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 w-full">
         Buscar
       </button>
 
-      <button type="button" onClick={clearFilters} className="w-full rounded-lg border px-4 py-2">
+      <button type="button" onClick={clearFilters} className="w-full px-6 py-3 text-sm font-semibold uppercase tracking-wide 
+             text-primary-500 border-2 border-primary-500 
+             transition-all duration-300 
+             hover:bg-primary-500 hover:text-white 
+             focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2">
         Limpiar filtros
       </button>
     </form>

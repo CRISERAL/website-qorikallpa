@@ -1,5 +1,6 @@
 import RoomsListV2 from '@/src/components/pages/rooms/RoomsListV2';
 import SharedHero from '@/src/components/pages/SharedHero';
+import MainLayout from '@/src/components/templates/MainLayout';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 type Props = {
@@ -17,7 +18,7 @@ export default async function Rooms({ params, searchParams }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations('rooms.hero');
   return (
-    <>
+    <MainLayout>
       <SharedHero
         title={t('title')}
         description={t('description')}
@@ -25,6 +26,6 @@ export default async function Rooms({ params, searchParams }: Props) {
       />
 
       <RoomsListV2 locale={locale} searchParams={filters} />
-    </>
+    </MainLayout>
   );
 }

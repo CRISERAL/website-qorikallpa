@@ -9,5 +9,5 @@ type Props = {
 export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
 
-  return <MainLayout>{children}</MainLayout>;
+  return <>{children}</>;
 }

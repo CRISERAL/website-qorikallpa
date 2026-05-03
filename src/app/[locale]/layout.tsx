@@ -9,13 +9,13 @@ import type { Metadata } from 'next';
 const playfair = Playfair_Display({
   variable: '--font-playfair',
   subsets: ['latin'],
-  weight: ['400', '700', '900'],
+  weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 const lato = Lato({
   variable: '--font-lato',
   subsets: ['latin'],
-  weight: ['300', '400', '700'],
+  weight: ['100', '300', '400', '700', '900'],
 });
 
 export const metadata: Metadata = {
@@ -41,10 +41,8 @@ export default async function RootLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="bg-background text-text-primary">
-      <body
-        className={`${playfair.variable} ${lato.variable} antialiased font-lato bg-background text-text-primary`}
-      >
+    <html lang={locale}>
+      <body className={`${playfair.variable} ${lato.variable} antialiased font-lato bg-background`}>
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
     </html>
