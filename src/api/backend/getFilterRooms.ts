@@ -7,6 +7,7 @@ interface GetFilterRoomsProps {
   tipo?: string;
   fecha_inicio?: string;
   fecha_fin?: string;
+  unidad_tarifa?: string;
 }
 
 export async function getFilterRooms({
@@ -14,6 +15,7 @@ export async function getFilterRooms({
   tipo,
   fecha_inicio,
   fecha_fin,
+  unidad_tarifa,
 }: GetFilterRoomsProps): Promise<ApiResponse<RoomItem[]>> {
   const params = new URLSearchParams();
 
@@ -29,6 +31,10 @@ export async function getFilterRooms({
 
   if (fecha_fin) {
     params.set('fecha_fin', fecha_fin);
+  }
+
+  if (unidad_tarifa) {
+    params.set('unidad_tarifa', unidad_tarifa);
   }
 
   const res = await fetch(`${env.backend.api}/api/public/habitaciones?${params.toString()}`, {

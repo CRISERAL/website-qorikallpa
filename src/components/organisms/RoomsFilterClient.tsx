@@ -9,6 +9,7 @@ type Props = {
   currentTipo?: string;
   currentFechaInicio?: string;
   currentFechaFin?: string;
+  currentUnidadTarifa?: string;
 };
 
 export default function RoomsFilterClient({
@@ -16,6 +17,7 @@ export default function RoomsFilterClient({
   currentTipo,
   currentFechaInicio,
   currentFechaFin,
+  currentUnidadTarifa,
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
@@ -28,6 +30,7 @@ export default function RoomsFilterClient({
     const tipo = formData.get('tipo')?.toString();
     const fecha_inicio = formData.get('fecha_inicio')?.toString();
     const fecha_fin = formData.get('fecha_fin')?.toString();
+    const unidad_tarifa = formData.get('unidad_tarifa')?.toString();
 
     if (tipo) {
       params.set('tipo', tipo);
@@ -45,6 +48,12 @@ export default function RoomsFilterClient({
       params.set('fecha_fin', `${fecha_fin}T00:00:00.000Z`);
     } else {
       params.delete('fecha_fin');
+    }
+
+    if (unidad_tarifa) {
+      params.set('unidad_tarifa', unidad_tarifa);
+    } else {
+      params.delete('unidad_tarifa');
     }
 
     const query = params.toString();
@@ -97,6 +106,20 @@ export default function RoomsFilterClient({
                   {item.nombre}
                 </option>
               ))}
+            </select>
+          </div>
+
+          <div>
+            <label className="mb-2 block text-sm font-medium">Unidad de tarifa</label>
+
+            <select
+              name="unidad_tarifa"
+              defaultValue={currentUnidadTarifa ?? ''}
+              className="w-full rounded-lg border px-3 py-2"
+            >
+              <option value="">Todas</option>
+              <option value="NOCHE">Noche</option>
+              <option value="HORA">Hora</option>
             </select>
           </div>
 

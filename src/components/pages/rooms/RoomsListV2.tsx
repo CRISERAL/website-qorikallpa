@@ -11,6 +11,7 @@ type Props = {
     tipo?: string;
     fecha_inicio?: string;
     fecha_fin?: string;
+    unidad_tarifa?: string;
   };
 };
 
@@ -20,6 +21,7 @@ export default async function RoomsListV2({ locale, searchParams }: Props) {
     tipo: searchParams.tipo,
     fecha_inicio: searchParams.fecha_inicio,
     fecha_fin: searchParams.fecha_fin,
+    unidad_tarifa: searchParams.unidad_tarifa,
   });
 
   const resType = await getAllRoomTypesLocale(locale);
@@ -35,6 +37,7 @@ export default async function RoomsListV2({ locale, searchParams }: Props) {
               currentTipo={searchParams.tipo}
               currentFechaInicio={searchParams.fecha_inicio}
               currentFechaFin={searchParams.fecha_fin}
+              currentUnidadTarifa={searchParams.unidad_tarifa}
             />
             <RoomsGridClient rooms={rooms.data} locale={locale} />
           </div>
