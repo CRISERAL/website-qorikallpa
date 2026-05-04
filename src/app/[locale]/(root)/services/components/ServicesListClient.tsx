@@ -28,7 +28,7 @@ export default function ServicesListClient({ services }: Props) {
       onMouseLeave={() => setStopScroll(false)}
     >
       {/* Fade izquierda */}
-      <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
+      <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-linear-to-r from-white to-transparent" />
 
       <div className="flex flex-col gap-6">
         {rows.map((row, rowIndex) => (
@@ -61,7 +61,7 @@ export default function ServicesListClient({ services }: Props) {
       </div>
 
       {/* Fade derecha */}
-      <div className="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
+      <div className="absolute right-0 top-0 h-full w-20 z-10 pointer-events-none bg-linear-to-l from-white to-transparent" />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { getAllRoomsByLocale } from '@/src/api/backend/getAllRoomsByLocale';
 import Container from '../../templates/Container';
 import RoomsGridClient from '../../organisms/RoomsGridClient';
 import { getAllRoomTypesLocale } from '@/src/api/backend/getAllRoomTypesLocale';
@@ -28,55 +27,25 @@ export default async function RoomsListV2({ locale, searchParams }: Props) {
   const contentType = resType.data;
 
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gray-50">
       <Container>
         <div className="flex flex-col lg:flex-row gap-8">
-          <div className="flex-1">
-            <RoomsFilterClient
-              roomTypes={contentType}
-              currentTipo={searchParams.tipo}
-              currentFechaInicio={searchParams.fecha_inicio}
-              currentFechaFin={searchParams.fecha_fin}
-              currentUnidadTarifa={searchParams.unidad_tarifa}
-            />
-            <RoomsGridClient rooms={rooms.data} locale={locale} />
-          </div>
-          <div className="w-full lg:w-80 shrink-0">
-            <div className="bg-white border border-gray-200 p-6 shadow-sm">
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h3 className="text-lg font-bold uppercase tracking-wider mb-3">DINING</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Peruvian cuisine restaurant, fine dining restaurant with live opera shows and
-                    lobby bar with Peruvian liqueurs
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <h3 className="text-lg font-bold uppercase tracking-wider mb-3">FEATURES</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Extensive Cusco School art collection, massage room with treatments using local
-                    ingredients, San Antonio Abad chapel
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <h3 className="text-lg font-bold uppercase tracking-wider mb-3">ACTIVITIES</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Art tour experience through our 17th century original paintings
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <h3 className="text-lg font-bold uppercase tracking-wider mb-3">
-                    ALL STAYS INCLUDE
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    Wi-Fi, water, breakfast, complimentary activities and welcome tea
-                  </p>
-                </div>
-              </div>
+          {/* Sidebar de Filtros - Izquierda */}
+          <aside className="w-full lg:w-80 lg:flex-shrink-0">
+            <div className="lg:sticky lg:top-24 z-10">
+              <RoomsFilterClient
+                roomTypes={contentType}
+                currentTipo={searchParams.tipo}
+                currentFechaInicio={searchParams.fecha_inicio}
+                currentFechaFin={searchParams.fecha_fin}
+                currentUnidadTarifa={searchParams.unidad_tarifa}
+              />
             </div>
+          </aside>
+
+          {/* Grid de Habitaciones - Derecha */}
+          <div className="flex-1 min-w-0 ">
+            <RoomsGridClient rooms={rooms.data} locale={locale} />
           </div>
         </div>
       </Container>
