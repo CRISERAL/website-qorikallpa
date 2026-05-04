@@ -15,4 +15,5 @@ services:
       RESEND_API_KEY: ${RESEND_API_KEY}
       EMAIL_FROM: ${EMAIL_FROM}
       API_BACKEND: ${API_BACKEND}
+      NEXT_PUBLIC_STRAPI_UR: ${NEXT_PUBLIC_STRAPI_UR}
     restart: unless-stopped
