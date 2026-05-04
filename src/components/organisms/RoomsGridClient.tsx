@@ -1,11 +1,12 @@
 'use client';
 
 import { getRoomById } from '@/src/api/backend/getRoomById';
-import { cn } from '@/src/lib/cn';
 import { ApiResponse } from '@/src/types/api/habitacion';
 import { RoomItem } from '@/src/types/models/RoomItem';
 import { useState } from 'react';
 import RoomModal from './RoomModal';
+import { formatListText } from '@/src/utils/formatListText';
+import ListText from '../ListText';
 
 interface Props {
   rooms: RoomItem[];
@@ -16,6 +17,8 @@ export default function RoomsGridClient({ rooms, locale }: Props) {
   const [roomSelected, setRoomSelected] = useState<RoomItem | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState<{ [key: string]: number }>({});
+  console.log(rooms);
 
   const handleOpenRoom = async (id: string) => {
     try {
@@ -41,40 +44,73 @@ export default function RoomsGridClient({ rooms, locale }: Props) {
 
   return (
     <>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        {rooms.map((item, i) => {
-          const rotations = ['-rotate-3', 'rotate-1', '-rotate-1', 'rotate-2'];
-          const rotate = rotations[i % rotations.length];
+      <div className="space-y-12">
+        {rooms.map((item) => {
+          const currentIndex = currentImageIndex[item.habitacion.id] || 0;
+          const images = item.habitacion.url_imagen || [];
+          const hasMultipleImages = images.length > 1;
+
+          const amenities = formatListText(item.habitacion.amenities);
+          const features = formatListText(item.habitacion.feature);
+
           return (
-            <div
-              key={item.habitacion.id}
-              role="button"
-              tabIndex={0}
-              onClick={() => handleOpenRoom(item.habitacion.id)}
-              className={cn(
-                'flex-1 min-w-0 transition-all duration-300 hover:scale-105 hover:rotate-0 hover:z-10 relative shadow',
-                rotate
-              )}
-            >
-              <div className="p-2 pb-0 bg-card">
-                <div className="aspect-square overflow-hidden relative">
-                  {item.habitacion.url_imagen && item.habitacion.url_imagen.length > 0 && (
-                    <img
-                      src={item.habitacion.url_imagen[0]}
-                      alt={`Habitación ${item.habitacion.nro_habitacion}`}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                  {item.tarifa && (
-                    <div className="absolute top-2 left-2 bg-accent text-white text-xs font-bold px-1.5 py-0.5 leading-none bg-accent-600">
-                      S/{item.tarifa.precio}
-                    </div>
-                  )}
+            <div key={item.habitacion.id} className="relative">
+              <div className="flex flex-col lg:flex-row">
+                <div className="w-full lg:w-[44%] relative">
+                  <div className="relative aspect-4/3">
+                    {images.length > 0 ? (
+                      <img
+                        src={images[currentIndex]}
+                        alt={item.habitacion.tipo_habitacion.nombre}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <span className="text-gray-400">No image</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="py-2 px-1 text-center">
-                  <p className="text-xs uppercase tracking-widest text-muted-foreground mt-0.5">
+
+                {/* Content Section */}
+                <div className="w-full lg:w-[56%]  p-6 shadow bg-neutral-600">
+                  {/* Title */}
+                  <h2 className="text-[40px] font-light tracking-[0.3em] mb-8">
                     {item.habitacion.tipo_habitacion.nombre}
-                  </p>
+                  </h2>
+
+                  {/* Features */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-3 mb-10">
+                    <ListText items={amenities} />
+                    <ListText items={features} />
+                  </div>
+
+                  {/* Divider */}
+                  <div className="border-t border-gray-200 pt-10">
+                    {/* Rate Info */}
+                    <div className="flex justify-between items-start mb-8">
+                      <div className="flex-1">
+                        <p className="text-[13px] text-gray-600 leading-relaxed mb-4 max-w-md whitespace-pre-line">
+                          {item.habitacion.descripcion}
+                        </p>
+                      </div>
+
+                      {/* Price */}
+                      <div className="text-right ml-8">
+                        <p className="text-[10px] text-gray-500 mb-0.5">Total for 1 night</p>
+                        <p className="text-[10px] text-gray-500 mb-3">Including Taxes</p>
+                        <p className="text-[44px] font-light leading-none">
+                          {item.tarifa.moneda}
+                          {item.tarifa.precio}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Reserve Button */}
+                    <button className="bg-black text-white px-20 py-3.5 text-[11px] font-semibold tracking-[0.25em] uppercase hover:bg-gray-800 transition-colors">
+                      RESERVE NOW
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
