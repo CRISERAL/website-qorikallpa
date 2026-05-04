@@ -58,27 +58,7 @@ export default function RoomsFilterClient({
 
   return (
     <div className="space-y-6">
-      {/* Header Section */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
-        {/* Display Selector */}
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-semibold uppercase tracking-wider">DISPLAY</span>
-          <select className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option>Rooms</option>
-          </select>
-        </div>
-
-        {/* Sort By Selector */}
-        <div className="flex items-center gap-3">
-          <span className="text-sm font-semibold uppercase tracking-wider">SORT BY</span>
-          <select className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500">
-            <option>Recommended</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-          </select>
-        </div>
-
-        {/* Show Filters Button */}
         <button
           type="button"
           onClick={() => setShowFilters(!showFilters)}
