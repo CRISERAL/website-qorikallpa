@@ -28,7 +28,7 @@ export default function RoomsFilterClient({
   const searchParams = useSearchParams();
   const [showFilters, setShowFilters] = useState(true);
   const [showCalendar, setShowCalendar] = useState(false);
-  
+
   // Inicializar el rango de fechas
   const [dateRange, setDateRange] = useState<DateRange | undefined>(() => {
     const from = currentFechaInicio ? new Date(currentFechaInicio) : undefined;
@@ -97,9 +97,7 @@ export default function RoomsFilterClient({
       {/* Header del Sidebar */}
       <div className="bg-linear-to-r from-primary-500 to-[#BB5E05] p-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold text-white uppercase tracking-wide">
-            Filtros
-          </h2>
+          <h2 className="text-xl font-bold text-white uppercase tracking-wide">Filtros</h2>
           <button
             type="button"
             onClick={() => setShowFilters(!showFilters)}
@@ -112,7 +110,12 @@ export default function RoomsFilterClient({
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </button>
         </div>
@@ -177,8 +180,18 @@ export default function RoomsFilterClient({
                 <span className={dateRange?.from ? 'text-gray-900' : 'text-gray-500'}>
                   {dateRangeText}
                 </span>
-                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                <svg
+                  className="w-5 h-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
                 </svg>
               </button>
 
@@ -186,11 +199,11 @@ export default function RoomsFilterClient({
               {showCalendar && (
                 <>
                   {/* Overlay */}
-                  <div 
+                  <div
                     className="fixed inset-0 bg-black/20 z-40"
                     onClick={() => setShowCalendar(false)}
                   />
-                  
+
                   {/* Modal del calendario */}
                   <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-white rounded-xl shadow-2xl border border-gray-200 p-6 max-w-fit">
                     <style jsx global>{`
@@ -290,9 +303,11 @@ export default function RoomsFilterClient({
                         color: var(--rdp-accent-color);
                       }
                     `}</style>
-                    
+
                     <div className="mb-4">
-                      <h3 className="text-lg font-bold text-gray-800 mb-1">Selecciona tu estadía</h3>
+                      <h3 className="text-lg font-bold text-gray-800 mb-1">
+                        Selecciona tu estadía
+                      </h3>
                       <p className="text-sm text-gray-600">
                         {dateRange?.from && dateRange?.to
                           ? `${format(dateRange.from, 'dd MMM yyyy', { locale: es })} - ${format(dateRange.to, 'dd MMM yyyy', { locale: es })}`
@@ -309,7 +324,7 @@ export default function RoomsFilterClient({
                       disabled={{ before: new Date() }}
                       className="rdp-custom"
                     />
-                    
+
                     <div className="flex gap-3 mt-6 pt-4 border-t border-gray-200">
                       <button
                         type="button"

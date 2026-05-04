@@ -1,5 +1,6 @@
 import ContactInfo from '@/src/components/pages/contact/ContactInfo';
 import SharedHero from '@/src/components/pages/SharedHero';
+import MainLayout from '@/src/components/templates/MainLayout';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 type Props = {
@@ -12,13 +13,13 @@ export default async function Contact({ params }: Props) {
   const t = await getTranslations('contact.hero');
 
   return (
-    <>
+    <MainLayout>
       <SharedHero
         title={t('title')}
         description={t('description')}
         backgroundImage="/bg-about-2.jpg"
       />
       <ContactInfo />
-    </>
+    </MainLayout>
   );
 }
