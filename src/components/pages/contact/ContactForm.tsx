@@ -18,9 +18,9 @@ interface FormErrors {
 }
 
 const inputClass =
-  'w-full bg-white border border-brown-300 px-4 py-3 text-sm text-brown-900 placeholder:text-brown-700/40 focus:outline-none focus:border-accent-500 transition-colors';
+  'w-full bg-white border border-tertiary-300 px-4 py-3 text-sm text-tertiary-900 placeholder:text-tertiary-500/40 focus:outline-none focus:border-primary-500 transition-colors font-lato';
 
-const labelClass = 'block text-xs font-bold text-brown-900 uppercase tracking-wide mb-2';
+const labelClass = 'block text-xs font-bold text-tertiary-900 uppercase tracking-wide mb-2 font-lato';
 
 export default function ContactForm() {
   const t = useTranslations('contact.info.form');
@@ -71,15 +71,15 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="flex flex-col items-center justify-center gap-6 py-12 text-center bg-cream-100 border border-brown-300 p-8">
-        <FaCheckCircle className="w-16 h-16 text-accent-500" />
+      <div className="flex flex-col items-center justify-center gap-6 py-12 text-center bg-neutral-100 border border-tertiary-300 p-8 rounded-lg">
+        <FaCheckCircle className="w-16 h-16 text-primary-500" />
         <div className="space-y-2">
-          <h3 className="text-2xl font-bold text-brown-900">{t('successTitle')}</h3>
-          <p className="text-sm text-brown-700 max-w-sm leading-relaxed">{t('successMessage')}</p>
+          <h3 className="text-2xl font-bold text-tertiary-900 font-playfair">{t('successTitle')}</h3>
+          <p className="text-sm text-tertiary-700 max-w-sm leading-relaxed font-lato">{t('successMessage')}</p>
         </div>
         <button
           onClick={() => setStatus('idle')}
-          className="mt-2 inline-flex items-center gap-2 text-xs font-bold text-accent-500 uppercase tracking-wide hover:text-accent-600 transition-colors"
+          className="mt-2 inline-flex items-center gap-2 text-xs font-bold text-primary-500 uppercase tracking-wide hover:text-primary-600 transition-colors"
         >
           ← Enviar otro mensaje
         </button>
@@ -93,7 +93,7 @@ export default function ContactForm() {
         {/* Name */}
         <div>
           <label htmlFor="contact-name" className={labelClass}>
-            {t('name')} <span className="text-accent-500">*</span>
+            {t('name')} <span className="text-primary-500">*</span>
           </label>
           <input
             id="contact-name"
@@ -117,7 +117,7 @@ export default function ContactForm() {
         {/* Email */}
         <div>
           <label htmlFor="contact-email" className={labelClass}>
-            {t('email')} <span className="text-accent-500">*</span>
+            {t('email')} <span className="text-primary-500">*</span>
           </label>
           <input
             id="contact-email"
@@ -159,7 +159,7 @@ export default function ContactForm() {
       {/* Message */}
       <div>
         <label htmlFor="contact-message" className={labelClass}>
-          {t('message')} <span className="text-accent-500">*</span>
+          {t('message')} <span className="text-primary-500">*</span>
         </label>
         <textarea
           id="contact-message"
@@ -189,7 +189,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status === 'sending'}
-          className="inline-flex items-center gap-2 px-8 py-3 bg-accent-500 text-white text-xs font-bold uppercase tracking-wide hover:bg-accent-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed shadow-md"
+          className="inline-flex items-center gap-2 px-8 py-3 bg-primary-500 text-white text-xs font-bold uppercase tracking-wide hover:bg-primary-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed shadow-md rounded"
         >
           {status === 'sending' ? t('sending') : t('submit')}
           {status !== 'sending' && <FaAngleRight className="w-3.5 h-3.5" />}
