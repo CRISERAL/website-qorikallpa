@@ -93,7 +93,7 @@ export default function RoomsFilterClient({
     : 'Seleccionar fechas';
 
   return (
-    <div className="bg-cream-50 px-4 py-4">
+    <div className="px-4 py-4">
       {/* Filter Form */}
       <div className={`${showFilters ? 'block' : 'hidden'} lg:block`}>
         <form action={handleSubmit} className="space-y-5">
@@ -184,12 +184,7 @@ export default function RoomsFilterClient({
           <div className="space-y-2 pt-3 border-t border-brown-100">
             <button
               type="submit"
-              className="w-full bg-gold-500 
-                       px-4 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-white 
-                       rounded
-                       transition-all duration-300 
-                       hover:bg-gold-600 hover:shadow-md
-                       focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-1"
+              className="bg-[linear-gradient(to_right,var(--color-primary-500)_70%,#BB5E05_100%)] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 w-full"
             >
               Aplicar Filtros
             </button>

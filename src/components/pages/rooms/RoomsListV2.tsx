@@ -44,7 +44,7 @@ export default async function RoomsListV2({ locale, searchParams }: Props) {
           {/* Sidebar de Filtros - Izquierda */}
           <aside className="w-full lg:w-80 lg:flex-shrink-0">
             <div className="lg:sticky lg:top-28 z-10">
-              <div className="bg-white shadow-md" style={{ padding: '6px 6px 20px 6px' }}>
+              <div className=" bg-neutral-600 shadow-md bg-" style={{ padding: '6px 6px 20px 6px' }}>
                 <div className="flex items-center gap-3 mb-6 px-4 pt-4">
                   <div className="w-9 h-9 bg-brown-900 flex items-center justify-center">
                     <svg className="w-4 h-4 text-cream-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">

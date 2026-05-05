@@ -145,14 +145,13 @@ export default function RoomsGridClient({ rooms, locale }: Props) {
                 <div className="flex gap-2 mt-2">
                   <button
                     onClick={() => handleOpenRoom(item.habitacion.id)}
-                    className="flex-1 bg-brown-900 text-cream-100 py-2.5 px-3 text-[10px] font-bold tracking-[0.2em] uppercase
+                    className="border flex-1 bg-brown-900 text-cream-100 py-2.5 px-3 text-[10px] font-bold tracking-[0.2em] uppercase
                              hover:bg-brown-800 transition-all duration-300"
                   >
                     Details
                   </button>
                   <button
-                    className="flex-1 bg-gold-500 text-white py-2.5 px-3 text-[10px] font-bold tracking-[0.2em] uppercase
-                             hover:bg-gold-600 transition-all duration-300"
+                    className="bg-[linear-gradient(to_right,var(--color-primary-500)_70%,#BB5E05_100%)] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                   >
                     Reserve
                   </button>

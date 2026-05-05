@@ -1,5 +1,7 @@
 'use client';
 
+import { Link } from '@/src/i18n/navigation';
+import { routes } from '@/src/lib/routes';
 import { RoomItem } from '@/src/types/models/RoomItem';
 import { useEffect, useState } from 'react';
 
@@ -70,7 +72,7 @@ export default function RoomModal({ open, loading, room, onClose }: Props) {
           Mobile  : full-width sheet that slides up from bottom, stacked vertically
           Desktop : two-column side-by-side card
       */}
-      <div className="relative z-10 w-full sm:max-w-5xl max-h-[92vh] sm:max-h-[88vh] flex flex-col sm:flex-row shadow-2xl overflow-hidden">
+      <div className="bg-neutral-600 relative z-10 w-full sm:max-w-5xl max-h-[92vh] sm:max-h-[88vh] flex flex-col sm:flex-row shadow-2xl overflow-hidden">
         {/* ══ TOP / LEFT — gallery ══ */}
         <div className="flex sm:w-[58%] sm:shrink-0 bg-brown-900 h-56 sm:h-auto">
           {/* Vertical thumbnail strip — hidden on mobile */}
@@ -308,12 +310,12 @@ export default function RoomModal({ open, loading, room, onClose }: Props) {
               {/* CTA */}
               <div className="mt-4">
                 <div className="h-px bg-linear-to-r from-transparent via-brown-300/50 to-transparent mb-5" />
-                <button
-                  onClick={onClose}
-                  className="w-full py-3.5 bg-accent-600 hover:bg-accent-500 text-cream-50 text-[10px] uppercase tracking-[0.3em] transition-colors duration-200"
+                <Link
+                href={routes.contact}
+                  className="bg-[linear-gradient(to_right,var(--color-primary-500)_70%,#BB5E05_100%)] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                 >
                   Reservar ahora
-                </button>
+                </Link>
               </div>
             </div>
           )}

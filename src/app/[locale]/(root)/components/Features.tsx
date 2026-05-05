@@ -3,9 +3,9 @@ import { getTranslations } from 'next-intl/server';
 
 const featureIcons = [
   '/icons/location.webp',
-  '/icons/location.webp',
-  '/icons/location.webp',
-  '/icons/location.webp',
+  '/icons/chacana.webp',
+  '/icons/mountain.png',
+  '/icons/hotel.png',
 ];
 
 type Feature = {
